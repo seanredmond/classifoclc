@@ -4,13 +4,11 @@ require "nokogiri"
 require "open-uri"
 
 module Classifoclc
-  URI = "http://classify.oclc.org/Classify?isbn=%s&summary=true"
+  URI = "http://classify.oclc.org/Classify?%s=%s&summary=true"
 
   def self.lookup(hsh)
 
-    unless hsh[:isbn].nil?
-      resp = open(URI % hsh[:isbn]).read
-    end
+    resp = open(URI % [hsh[:identifier], hsh[:value]]).read
 
     parsed = Nokogiri::XML(resp)
 
@@ -18,6 +16,10 @@ module Classifoclc
   end
 
   def self.isbn(isbn)
-    lookup(:isbn => isbn, :summary => true)
+    lookup(:identifier => 'isbn', :value => isbn, :summary => true)
+  end
+
+  def self.owi(owi)
+    lookup(:identifier => 'owi', :value  => owi, :summary => true)
   end
 end
