@@ -21,6 +21,15 @@ RSpec.configure do |config|
     stub_request(:get, "classify.oclc.org/Classify").
       with(query: {"isbn" => "abc", "summary" => "true"}).
       to_return(RESP_NONE)
+
+    stub_request(:get, "classify.oclc.org/Classify").
+      with(query: {"isbn" => "500error", "summary" => "true"}).
+      to_return(status: 500)
+
+    stub_request(:get, "classify.oclc.org/Classify").
+      with(query: {"isbn" => "timeout", "summary" => "true"}).
+      to_timeout
+
   end
 
 end
