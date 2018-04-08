@@ -1,3 +1,4 @@
+require "classifoclc/errors.rb"
 require "classifoclc/version"
 require "classifoclc/work"
 require "nokogiri"
@@ -11,6 +12,11 @@ module Classifoclc
     resp = open(URI % [hsh[:identifier], hsh[:value]]).read
 
     parsed = Nokogiri::XML(resp)
+
+    unless parsed.css('input[type="noParam"]').empty?
+      raise BadIdentifierError.
+              new "%s is not allowed as an identifer" % hsh[:identifier]
+    end
 
     return parsed.css('work').map{|w| Work::new(w)}
   end

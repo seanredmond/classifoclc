@@ -18,8 +18,16 @@ RSpec.describe Classifoclc do
           to raise_error Net::OpenTimeout
       end
     end
+
+    context "when you pass a bad identifier" do
+      it "raises a helpful error" do
+        expect {works Classifoclc::lookup(:identifier => 'zzz',
+                                          :value => 'does not matter')}.
+          to raise_error Classifoclc::BadIdentifierError
+      end
+    end
     
-    context "when the identifier is no good" do
+    context "when there is no record for the identifier" do
       it "returns an empty array" do
         works = Classifoclc::lookup(:identifier => 'isbn', :value => 'abc')
         expect(works).to be_a Array
@@ -27,7 +35,7 @@ RSpec.describe Classifoclc do
       end
     end
 
-    context "when the identifier is good" do
+    context "when there is a record for the identifier" do
       it "returns an empty array" do
         works = Classifoclc::lookup(:identifier => 'isbn',
                                     :value => '0151592659')
