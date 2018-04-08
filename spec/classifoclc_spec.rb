@@ -56,7 +56,7 @@ RSpec.describe Classifoclc do
   end
 
   describe "#owi" do
-    it "calls #lookup with an ISBN" do
+    it "calls #lookup with an OWI" do
       expect(Classifoclc).
         to receive(:lookup).
              with({:identifier=>"owi", :value=>"201096", :summary=>true})
@@ -64,4 +64,12 @@ RSpec.describe Classifoclc do
     end
   end
   
+  describe "#oclc" do
+    it "calls #lookup with an OCLC" do
+      expect(Classifoclc).
+        to receive(:lookup).
+             with({:identifier=>"oclc", :value=>"2005960", :summary=>true})
+      Classifoclc::oclc("2005960")
+    end
+  end
 end

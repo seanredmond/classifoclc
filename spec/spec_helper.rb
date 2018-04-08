@@ -40,6 +40,10 @@ RSpec.configure do |config|
       with(query: {"isbn" => "0151592659", "summary" => "true"}).
       to_return(RESP_MERIDIAN)
 
+    stub_request(:get, "classify.oclc.org/Classify").
+      with(query: {"oclc" => "2005960", "summary" => "true"}).
+      to_return(RESP_MERIDIAN)
+    
 
   end
 
