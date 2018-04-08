@@ -6,7 +6,7 @@ require "open-uri"
 module Classifoclc
   URI = "http://classify.oclc.org/Classify?isbn=%s&summary=true"
 
-  def self.Lookup(hsh)
+  def self.lookup(hsh)
 
     unless hsh[:isbn].nil?
       resp = open(URI % hsh[:isbn]).read
@@ -18,6 +18,6 @@ module Classifoclc
   end
 
   def self.isbn(isbn)
-    Lookup(:isbn => isbn, :summary => true)
+    lookup(:isbn => isbn, :summary => true)
   end
 end
