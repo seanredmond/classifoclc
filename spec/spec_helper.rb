@@ -6,6 +6,9 @@ SPEC_DIR = File.dirname(__FILE__)
 RESP_DIR = File.join(SPEC_DIR, 'responses')
 RESP_NONE = File.new(File.join(RESP_DIR, 'noresults.txt')).read
 RESP_BADP = File.new(File.join(RESP_DIR, 'bad_param.txt')).read
+RESP_BADF = File.new(File.join(RESP_DIR, 'bad_format.txt')).read
+RESP_NOTF = File.new(File.join(RESP_DIR, 'not_found.txt')).read
+RESP_UNEXPECTED = File.new(File.join(RESP_DIR, 'unexpected.txt')).read
 RESP_MERIDIAN = File.new(File.join(RESP_DIR, '0151592659.txt')).read
 
 RSpec.configure do |config|
@@ -36,6 +39,18 @@ RSpec.configure do |config|
       with(query: {"zzz" => "does not matter", "summary" => "true"}).
       to_return(RESP_BADP)
 
+    stub_request(:get, "classify.oclc.org/Classify").
+      with(query: {"isbn" => "0151592659zz", "summary" => "true"}).
+      to_return(RESP_BADF)
+
+    stub_request(:get, "classify.oclc.org/Classify").
+      with(query: {"isbn" => "8765432109", "summary" => "true"}).
+      to_return(RESP_NOTF)
+
+    stub_request(:get, "classify.oclc.org/Classify").
+      with(query: {"isbn" => "unexpected", "summary" => "true"}).
+      to_return(RESP_UNEXPECTED)
+    
     stub_request(:get, "classify.oclc.org/Classify").
       with(query: {"isbn" => "0151592659", "summary" => "true"}).
       to_return(RESP_MERIDIAN)

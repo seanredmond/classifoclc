@@ -1,35 +1,37 @@
 module Classifoclc
   class Work
+    attr_reader :authors
     def initialize(node)
       @node = node
+      @work = node.css('work').first
     end
 
     def owi
-      @node['owi']
+      @work['owi']
     end
 
     def title
-      @node['title']
+      @work['title']
     end
 
     def format
-      @node['format']
+      @work['format']
     end
 
     def itemtype
-      @node['itemtype']
+      @work['itemtype']
     end
 
     def editions
-      @node['editions'].to_i
+      @work['editions'].to_i
     end
 
     def holdings
-      @node['holdings'].to_i
+      @work['holdings'].to_i
     end
 
     def eholdings
-      @node['eholdings'].to_i
+      @work['eholdings'].to_i
     end
   end
 end

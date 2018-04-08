@@ -17,9 +17,16 @@ RSpec.describe Classifoclc do
                                             :value => 'timeout')}.
           to raise_error Net::OpenTimeout
       end
+
+      it "passes on unexpected error responses" do
+        expect {works = Classifoclc::lookup(:identifier => 'isbn',
+                                            :value => 'unexpected')}.
+          to raise_error Classifoclc::UnexpectedError
+      end
+      
     end
 
-    context "when you pass a bad identifier" do
+    context "when you pass an invalid identifier" do
       it "raises a helpful error" do
         expect {works Classifoclc::lookup(:identifier => 'zzz',
                                           :value => 'does not matter')}.
@@ -27,16 +34,25 @@ RSpec.describe Classifoclc do
       end
     end
     
+    context "when you pass identifier with an invalid format" do
+      it "raises a helpful error" do
+        expect {works Classifoclc::lookup(:identifier => 'isbn',
+                                          :value => '0151592659zz')}.
+          to raise_error Classifoclc::BadIdentifierFormatError
+      end
+    end
+    
     context "when there is no record for the identifier" do
       it "returns an empty array" do
-        works = Classifoclc::lookup(:identifier => 'isbn', :value => 'abc')
+        works = Classifoclc::lookup(:identifier => 'isbn',
+                                    :value => '8765432109')
         expect(works).to be_a Array
         expect(works).to be_empty
       end
     end
 
     context "when there is a record for the identifier" do
-      it "returns an empty array" do
+      it "returns an array" do
         works = Classifoclc::lookup(:identifier => 'isbn',
                                     :value => '0151592659')
         expect(works).to be_a Array

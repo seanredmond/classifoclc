@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 272
+Date: Sun, 08 Apr 2018 18:51:23 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <input type="isbn">8765432109</input>
+  <response code="102"/>
+</classify>
