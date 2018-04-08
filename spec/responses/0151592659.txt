@@ -1,0 +1,30 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1014
+Date: Sun, 08 Apr 2018 16:39:24 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="0"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Walker, Alice, 1944-" editions="114" eholdings="196" format="Book" holdings="3264" itemtype="itemtype-book" owi="201096" title="Meridian">1002101215</work>
+  <authors>
+    <author lc="n79109131" viaf="108495772">Walker, Alice, 1944-</author>
+  </authors>
+  <orderBy>thold desc</orderBy>
+  <input type="isbn">0151592659</input>
+  <recommendations>
+    <ddc>
+      <mostPopular holdings="2632" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="2632" sfa="813.54"/>
+      <latestEdition holdings="162" sf2="23" sfa="813.54"/>
+      <latestEdition holdings="1" sf2="14" sfa="813.5"/>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="3221" nsfa="PS3573.A425" sfa="PS3573.A425"/>
+      <mostRecent holdings="3221" sfa="PS3573.A425"/>
+    </lcc>
+  </recommendations>
+</classify>

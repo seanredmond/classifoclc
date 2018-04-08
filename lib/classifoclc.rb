@@ -1,4 +1,5 @@
 require "classifoclc/version"
+require "classifoclc/work"
 require "nokogiri"
 require "open-uri"
 
@@ -13,6 +14,10 @@ module Classifoclc
 
     parsed = Nokogiri::XML(resp)
 
-    return parsed.css('work').map{|w| w}
+    return parsed.css('work').map{|w| Work::new(w)}
+  end
+
+  def self.isbn(isbn)
+    Lookup(:isbn => isbn, :summary => true)
   end
 end
