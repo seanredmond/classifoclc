@@ -1,3 +1,4 @@
+require "classifoclc/author.rb"
 require "classifoclc/errors.rb"
 require "classifoclc/version"
 require "classifoclc/work"

@@ -124,5 +124,27 @@ RSpec.describe Classifoclc do
       expect(@meridian.eholdings).to be_a Integer
       expect(@meridian.eholdings).to eq 196
     end
+
+    it "has authors" do
+      expect(@meridian.authors).to be_a Array
+    end
+  end
+
+  describe Classifoclc::Author do
+    before(:each) do
+      @author = Classifoclc::isbn("0151592659").first.authors.first
+    end
+
+    it "has a name" do
+      expect(@author.name).to eq "Walker, Alice, 1944-"
+    end
+
+    it "has an LC identifier" do
+      expect(@author.lc).to eq "n79109131"
+    end
+
+    it "has a VIAF identifier"  do
+      expect(@author.viaf).to eq "108495772"
+    end
   end
 end

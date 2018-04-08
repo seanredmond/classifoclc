@@ -4,6 +4,8 @@ module Classifoclc
     def initialize(node)
       @node = node
       @work = node.css('work').first
+      @authors = node.css('author').
+                   map{|a| Classifoclc::Author.new(a.text, a['lc'], a['viaf'])}
     end
 
     def owi
