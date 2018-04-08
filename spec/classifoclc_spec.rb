@@ -72,4 +72,41 @@ RSpec.describe Classifoclc do
       Classifoclc::oclc("2005960")
     end
   end
+
+  describe Classifoclc::Work do
+    before(:each) do
+      @meridian = Classifoclc::isbn("0151592659").first
+    end
+
+    it "has an owi" do
+      expect(@meridian.owi).to eq "201096"
+    end
+
+    it "has a title" do
+      expect(@meridian.title).to eq "Meridian"
+    end
+
+    it "has a format" do
+      expect(@meridian.format).to eq "Book"
+    end
+
+    it "has an itemtype" do
+      expect(@meridian.itemtype).to eq "itemtype-book"
+    end
+
+    it "has a count of editions" do
+      expect(@meridian.editions).to be_a Integer
+      expect(@meridian.editions).to eq 114
+    end
+
+    it "has a count of holdings" do
+      expect(@meridian.holdings).to be_a Integer
+      expect(@meridian.holdings).to eq 3264
+    end
+      
+    it "has a count of eholdings" do
+      expect(@meridian.eholdings).to be_a Integer
+      expect(@meridian.eholdings).to eq 196
+    end
+  end
 end
