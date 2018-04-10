@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 807
+Date: Sun, 08 Apr 2018 21:01:37 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="4"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <workCount>2</workCount>
+  <start>0</start>
+  <maxRecs>25</maxRecs>
+  <orderBy>thold desc</orderBy>
+  <input type="isbn">0851775934</input>
+  <works>
+    <work author="Gröner, Erich" editions="10" format="Book" holdings="52" hyr="1991" itemtype="itemtype-book" lyr="1990" owi="4095816718" schemes="DDC LCC" title="German warships 1815-1945." wi="20691916"/>
+    <work author="Gröner, Erich" editions="8" format="Book" holdings="13" hyr="1990" itemtype="itemtype-book" lyr="1990" owi="3375745328" schemes="DDC" title="German warships 1815-1945." wi="263481284"/>
+  </works>
+</classify>

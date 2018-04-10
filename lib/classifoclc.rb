@@ -6,19 +6,21 @@ require "nokogiri"
 require "open-uri"
 
 module Classifoclc
-  URI = "http://classify.oclc.org/Classify?%s=%s&summary=true"
+  URI = "http://classify.oclc.org/classify2/Classify?%s=%s&summary=true"
 
   def self.lookup(hsh)
-
     resp = open(URI % [hsh[:identifier], hsh[:value]]).read
 
     parsed = Nokogiri::XML(resp)
-
 
     resp_code = parsed.css('response').first['code']
 
     if resp_code == '0' or resp_code == '2'
       return [Work::new(parsed)]
+    end
+
+    if resp_code == '4'
+      return parsed.css('work').map{|w| owi(w['owi'])}.flatten
     end
 
     if resp_code == '100'

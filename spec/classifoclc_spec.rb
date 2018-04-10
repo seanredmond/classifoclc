@@ -60,6 +60,17 @@ RSpec.describe Classifoclc do
         expect(works.first).to be_a Classifoclc::Work
       end
     end
+
+    context "when there are multiple works" do
+      it "returns an array of works" do
+        works = Classifoclc::lookup(:identifier => 'isbn',
+                                    :value => '0851775934')
+
+        expect(works).to be_a Array
+        expect(works.count).to eq 2
+        expect(works[0]).to be_a Classifoclc::Work
+      end
+    end
   end
 
   describe "#isbn" do
