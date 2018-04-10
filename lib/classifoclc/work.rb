@@ -5,7 +5,8 @@ module Classifoclc
       @node = node
       @work = node.css('work').first
       @authors = node.css('author').
-                   map{|a| Classifoclc::Author.new(a.text, a['lc'], a['viaf'])}
+                 map{|a| Classifoclc::Author.new(a.text, a['lc'], a['viaf'])}
+      @editions = nil
     end
 
     def owi
@@ -24,7 +25,7 @@ module Classifoclc
       @work['itemtype']
     end
 
-    def editions
+    def edition_count
       @work['editions'].to_i
     end
 
@@ -34,6 +35,17 @@ module Classifoclc
 
     def eholdings
       @work['eholdings'].to_i
+    end
+
+    def editions
+      unless @editions.nil?
+        return @editions
+      end
+
+      @editions = Classifoclc::lookup(:identifier => 'owi', :value => owi,
+                                      :max => edition_count,
+                                      :summary => false,
+                                      :want_editions => true)
     end
   end
 end

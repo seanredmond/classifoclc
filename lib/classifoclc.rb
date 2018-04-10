@@ -1,4 +1,5 @@
 require "classifoclc/author.rb"
+require "classifoclc/edition.rb"
 require "classifoclc/errors.rb"
 require "classifoclc/version"
 require "classifoclc/work"
@@ -6,16 +7,27 @@ require "nokogiri"
 require "open-uri"
 
 module Classifoclc
-  URI = "http://classify.oclc.org/classify2/Classify?%s=%s&summary=true"
+  URI = "http://classify.oclc.org/classify2/Classify?%s=%s&summary=%s&maxRecs=%d"
 
   def self.lookup(hsh)
-    resp = open(URI % [hsh[:identifier], hsh[:value]]).read
+
+    max = hsh.fetch(:max, 25)
+    summary = hsh.fetch(:summary, true)
+    want_editions = hsh.fetch(:want_editions, false)
+
+    resp = open(URI % [hsh[:identifier], hsh[:value], summary, max]).read
 
     parsed = Nokogiri::XML(resp)
 
     resp_code = parsed.css('response').first['code']
 
     if resp_code == '0' or resp_code == '2'
+      if want_editions
+        if resp_code == '0'
+          return [Edition::new(parsed.css('work').first)]
+        end
+        return parsed.css('edition').map{|e| Edition::new(e)}
+      end
       return [Work::new(parsed)]
     end
 

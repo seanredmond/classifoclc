@@ -10,6 +10,7 @@ RESP_BADF = File.new(File.join(RESP_DIR, 'bad_format.txt')).read
 RESP_NOTF = File.new(File.join(RESP_DIR, 'not_found.txt')).read
 RESP_UNEXPECTED = File.new(File.join(RESP_DIR, 'unexpected.txt')).read
 RESP_MERIDIAN = File.new(File.join(RESP_DIR, '0151592659.txt')).read
+RESP_FULL = File.new(File.join(RESP_DIR, '0151592659-full.txt')).read
 RESP_MULT = File.new(File.join(RESP_DIR, 'multiple.txt')).read
 RESP_MULTA = File.new(File.join(RESP_DIR, 'multiple-a.txt')).read
 RESP_MULTB = File.new(File.join(RESP_DIR, 'multiple-b.txt')).read
@@ -28,51 +29,67 @@ RSpec.configure do |config|
 
   config.before(:each)  do
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "abc", "summary" => "true"}).
+      with(query: {"isbn" => "abc", "summary" => "true", "maxRecs" => "25"}).
       to_return(RESP_NONE)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "500error", "summary" => "true"}).
+      with(query: {"isbn" => "500error", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(status: 500)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "timeout", "summary" => "true"}).
+      with(query: {"isbn" => "timeout", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_timeout
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"zzz" => "does not matter", "summary" => "true"}).
+      with(query: {"zzz" => "does not matter", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_BADP)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "0151592659zz", "summary" => "true"}).
+      with(query: {"isbn" => "0151592659zz", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_BADF)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "8765432109", "summary" => "true"}).
+      with(query: {"isbn" => "8765432109", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_NOTF)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "unexpected", "summary" => "true"}).
+      with(query: {"isbn" => "unexpected", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_UNEXPECTED)
     
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "0151592659", "summary" => "true"}).
-      to_return(RESP_MERIDIAN)
-
-    stub_request(:get, "classify.oclc.org/Classify").
-      with(query: {"oclc" => "2005960", "summary" => "true"}).
+      with(query: {"isbn" => "0151592659", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_MERIDIAN)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"isbn" => "0851775934", "summary" => "true"}).
+      with(query: {"oclc" => "2005960", "summary" => "true",
+                   "maxRecs" => "25"}).
+      to_return(RESP_MERIDIAN)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(
+        query: {"owi" => "201096", "summary" => "false", "maxRecs" => "114"}
+      ).to_return(RESP_FULL)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"isbn" => "0851775934", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_MULT)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "4095816718", "summary" => "true"}).
+      with(query: {"owi" => "4095816718", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_MULTA)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "3375745328", "summary" => "true"}).
+      with(query: {"owi" => "3375745328", "summary" => "true",
+                   "maxRecs" => "25"}).
       to_return(RESP_MULTB)
   end
 end

@@ -122,8 +122,8 @@ RSpec.describe Classifoclc do
     end
 
     it "has a count of editions" do
-      expect(@meridian.editions).to be_a Integer
-      expect(@meridian.editions).to eq 114
+      expect(@meridian.edition_count).to be_a Integer
+      expect(@meridian.edition_count).to eq 114
     end
 
     it "has a count of holdings" do
@@ -138,6 +138,13 @@ RSpec.describe Classifoclc do
 
     it "has authors" do
       expect(@meridian.authors).to be_a Array
+    end
+
+    it "has editions" do
+      eds = @meridian.editions
+      expect(eds).to be_a Array
+      expect(eds.count).to eq 114
+      expect(eds.first).to be_a Classifoclc::Edition
     end
   end
 
@@ -156,6 +163,46 @@ RSpec.describe Classifoclc do
 
     it "has a VIAF identifier"  do
       expect(@author.viaf).to eq "108495772"
+    end
+  end
+
+  describe Classifoclc::Edition do
+    before(:each) do
+      @meridian = Classifoclc::isbn("0151592659").first
+      @editions = @meridian.editions
+      @ed = @editions.first
+    end
+
+    it "has an OCLC number" do
+      expect(@ed.oclc).to eq "2005960"
+    end
+
+    it "has authors" do
+      expect(@ed.authors).to eq "Walker, Alice, 1944-"
+    end
+
+    it "has a title" do
+      expect(@ed.title).to eq "Meridian"
+    end
+
+    it "has a format" do
+      expect(@ed.format).to eq "Book"
+    end
+
+    it "has an itemtype" do
+      expect(@ed.itemtype).to eq "itemtype-book"
+    end
+
+    it "has holdings" do
+      expect(@ed.holdings).to eq 1420
+    end
+
+    it "has eholdings" do
+      expect(@ed.eholdings).to eq 0
+    end
+
+    it "has a language" do
+      expect(@ed.language).to eq "eng"
     end
   end
 end
