@@ -3,5 +3,7 @@ module Classifoclc
 
   class BadIdentifierFormatError < StandardError; end
 
+  class InfiniteLoopError < StandardError; end
+
   class UnexpectedError < StandardError; end
 end

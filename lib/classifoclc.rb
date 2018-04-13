@@ -32,6 +32,11 @@ module Classifoclc
     end
 
     if resp_code == '4'
+      if hsh[:identifier] == 'owi'
+        if parsed.css('work').map{|w| w['owi']}.include?(hsh[:value])
+          raise Classifoclc::InfiniteLoopError.new("The record for owi %s contains records also with the owi %s. Cannot fetch data as it would lead to an infinite loop")
+        end
+      end
       return parsed.css('work').map{|w| owi(w['owi'])}.flatten
     end
 

@@ -14,7 +14,8 @@ RESP_FULL = File.new(File.join(RESP_DIR, '0151592659-full.txt')).read
 RESP_MULT = File.new(File.join(RESP_DIR, 'multiple.txt')).read
 RESP_MULTA = File.new(File.join(RESP_DIR, 'multiple-a.txt')).read
 RESP_MULTB = File.new(File.join(RESP_DIR, 'multiple-b.txt')).read
-
+RESP_LOOP = File.new(File.join(RESP_DIR, '979229.txt')).read
+RESP_HASLOOP = File.new(File.join(RESP_DIR, '0060205253.txt')).read
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -91,6 +92,15 @@ RSpec.configure do |config|
       with(query: {"owi" => "3375745328", "summary" => "true",
                    "maxRecs" => "25"}).
       to_return(RESP_MULTB)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "979229", "summary" => "true",
+                   "maxRecs" => "25"}).
+      to_return(RESP_LOOP)
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"isbn" => "0060205253", "summary" => "true",
+                   "maxRecs" => "25"}).
+      to_return(RESP_HASLOOP)
   end
 end
 

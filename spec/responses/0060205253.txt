@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 827
+Date: Fri, 13 Apr 2018 19:17:03 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="4"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <workCount>2</workCount>
+  <start>0</start>
+  <maxRecs>25</maxRecs>
+  <orderBy>thold desc</orderBy>
+  <input type="isbn">0060205253</input>
+  <works>
+    <work author="Hoban, Lillian" editions="11" format="Book" holdings="1821" hyr="2007" itemtype="itemtype-book" lyr="1993" owi="979229" schemes="DDC LCC" title="Arthur's camp-out" wi="1002143817"/>
+    <work author="Hoban, Lillian" editions="10" format="Audiobook on Cassette" holdings="350" hyr="2007" itemtype="itemtype-audiobook-cassette" lyr="1993" owi="1151562720" schemes="DDC LCC" title="Arthur's camp-out" wi="1005536506"/>
+  </works>
+</classify>

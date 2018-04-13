@@ -5,7 +5,7 @@ RSpec.describe Classifoclc do
   end
 
   describe "#lookup" do
-    context "when their is trouble" do
+    context "when there is trouble" do
       it "passes errors on up" do
         expect {works = Classifoclc::lookup(:identifier => 'isbn',
                                             :value => '500error')}.
@@ -23,7 +23,12 @@ RSpec.describe Classifoclc do
                                             :value => 'unexpected')}.
           to raise_error Classifoclc::UnexpectedError
       end
-      
+
+      it "raises an error if there will be an infinite loop" do
+        expect { works = Classifoclc::lookup(:identifier => 'isbn',
+                                             :value => '0060205253') }.
+          to raise_error Classifoclc::InfiniteLoopError
+      end
     end
 
     context "when you pass an invalid identifier" do
