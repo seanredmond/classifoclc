@@ -75,7 +75,7 @@ RSpec.configure do |config|
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(
-        query: {"owi" => "201096", "summary" => "false", "maxRecs" => "114"}
+        query: {"owi" => "201096", "summary" => "false", "maxRecs" => "114", "orderBy" => "hold desc"}
       ).to_return(RESP_FULL)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").

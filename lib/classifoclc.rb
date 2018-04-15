@@ -23,12 +23,6 @@ module Classifoclc
     resp_code = parsed.css('response').first['code']
 
     if resp_code == '0' or resp_code == '2'
-      if want_editions
-        if resp_code == '0'
-          return [Edition::new(parsed.css('work').first)]
-        end
-        return parsed.css('edition').map{|e| Edition::new(e)}
-      end
       return [Work::new(parsed)]
     end
 
@@ -77,8 +71,26 @@ module Classifoclc
 
   private_class_method def self.default_options(hsh1, hsh2 = {})
     {:orderby => OrderBy::HOLDINGS,
-     :order => Order::ASC,
+     :order => Order::DESC,
+     :maxRecs => 25,
      :summary => true}.merge(hsh1).merge(hsh2)
   end
+
+  private_class_method def self.api_params(hsh)
+    params = {:orderBy => "%s %s" % [hsh.delete(:orderby), hsh.delete(:order)]}.merge(hsh)
+    return params
+  end
   
+  private_class_method def self.param_string(hsh)
+    id = hsh.delete(:identifier)
+    val = hsh.delete(:value)
+    return api_params(default_options({id => val}, hsh))
+             .map{|k,v| "#{k}=#{v}"}.join("&") 
+  end
+
+  def self.fetch_data(hsh)
+    resp = open(URL % param_string(hsh)).read
+    parsed = Nokogiri::XML(resp)
+    return parsed
+  end
 end

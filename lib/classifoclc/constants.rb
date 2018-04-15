@@ -1,4 +1,7 @@
 module Classifoclc
+
+  URL = "http://classify.oclc.org/classify2/Classify?%s"
+  
   module Id
     STDNBR  = :stdnbr
     OCLC    = :oclc

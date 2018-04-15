@@ -42,10 +42,19 @@ module Classifoclc
         return @editions
       end
 
-      @editions = Classifoclc::lookup(:identifier => 'owi', :value => owi,
-                                      :max => edition_count,
-                                      :summary => false,
-                                      :want_editions => true)
+      
+      @editions = full
+      return @editions
     end
+
+    def full
+      data = Classifoclc::fetch_data(:identifier => 'owi', :value => owi,
+                                     :maxRecs => edition_count,
+                                     :summary => false)
+      editions = data.css('edition').map{|e| Edition::new(e)}
+      return editions
+    end
+
+    private :full
   end
 end

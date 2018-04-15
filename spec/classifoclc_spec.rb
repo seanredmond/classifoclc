@@ -104,8 +104,9 @@ RSpec.describe Classifoclc do
                with({:identifier => Classifoclc::Id::OCLC,
                      :value => "2005960",
                      :summary=>true,
+                     :maxRecs => 25,
                      :orderby => Classifoclc::OrderBy::HOLDINGS,
-                     :order => Classifoclc::Order::ASC})
+                     :order => Classifoclc::Order::DESC})
         Classifoclc::oclc("2005960")
       end
     end
@@ -117,6 +118,7 @@ RSpec.describe Classifoclc do
                with({:identifier => Classifoclc::Id::OCLC,
                      :value => "2005960",
                      :summary => false,
+                     :maxRecs => 25,
                      :orderby => Classifoclc::OrderBy::EDITIONS,
                      :order => Classifoclc::Order::DESC})
         Classifoclc::oclc("2005960", :summary => false,
