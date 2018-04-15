@@ -6,6 +6,7 @@ module Classifoclc
     STDNBR  = :stdnbr
     OCLC    = :oclc
     ISBN    = :isbn
+    LCCN    = :lccn
     ISSN    = :issn
     UPC     = :upc
     IDENT   = :ident

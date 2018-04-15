@@ -80,6 +80,17 @@ RSpec.describe Classifoclc do
     end
   end
   
+  describe "#lccn" do
+    it "calls #lookup with an LCCN" do
+      expect(Classifoclc).
+        to receive(:lookup).
+             with({:identifier => Classifoclc::Id::LCCN, :value => "76000941",
+                   :orderby => :hold, :order => :desc, :maxRecs => 25,
+                   :summary => true})
+      Classifoclc::lccn("76000941")
+    end
+  end
+  
   describe "#oclc" do
     context "with default options" do 
       it "calls #lookup with an OCLC" do

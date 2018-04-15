@@ -20,6 +20,10 @@ module Classifoclc
     lookup(default_options(hsh, {:identifier => Id::OCLC, :value  => oclc}))
   end
 
+  def self.lccn(lccn, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::LCCN, :value  => lccn}))
+  end
+
   private_class_method def self.lookup(hsh)
     parsed = fetch_data(hsh)
     resp_code = parsed.css('response').first['code']
