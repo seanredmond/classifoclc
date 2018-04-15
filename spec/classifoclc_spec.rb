@@ -7,50 +7,36 @@ RSpec.describe Classifoclc do
   describe "#lookup" do
     context "when there is trouble" do
       it "passes errors on up" do
-        expect {works = Classifoclc::lookup(:identifier => 'isbn',
-                                            :value => '500error')}.
+        expect {works = Classifoclc::isbn('500error')}.
           to raise_error(OpenURI::HTTPError)
       end
     
       it "passes timeouts on up" do
-        expect {works = Classifoclc::lookup(:identifier => 'isbn',
-                                            :value => 'timeout')}.
+        expect {works = Classifoclc::isbn('timeout')}.
           to raise_error Net::OpenTimeout
       end
 
       it "passes on unexpected error responses" do
-        expect {works = Classifoclc::lookup(:identifier => 'isbn',
-                                            :value => 'unexpected')}.
+        expect {works = Classifoclc::isbn('unexpected')}.
           to raise_error Classifoclc::UnexpectedError
       end
 
       it "raises an error if there will be an infinite loop", :loop => true do
-        expect { works = Classifoclc::lookup(:identifier => 'isbn',
-                                             :value => '0060205253') }.
+        expect { works = Classifoclc::isbn('0060205253') }.
           to raise_error Classifoclc::InfiniteLoopError
       end
     end
 
-    context "when you pass an invalid identifier" do
-      it "raises a helpful error" do
-        expect {works Classifoclc::lookup(:identifier => 'zzz',
-                                          :value => 'does not matter')}.
-          to raise_error Classifoclc::BadIdentifierError
-      end
-    end
-    
     context "when you pass identifier with an invalid format" do
       it "raises a helpful error" do
-        expect {works Classifoclc::lookup(:identifier => 'isbn',
-                                          :value => '0151592659zz')}.
+        expect {works Classifoclc::isbn('0151592659zz')}.
           to raise_error Classifoclc::BadIdentifierFormatError
       end
     end
     
     context "when there is no record for the identifier" do
       it "returns an empty array" do
-        works = Classifoclc::lookup(:identifier => 'isbn',
-                                    :value => '8765432109')
+        works = Classifoclc::isbn('8765432109')
         expect(works).to be_a Array
         expect(works).to be_empty
       end
@@ -58,8 +44,7 @@ RSpec.describe Classifoclc do
 
     context "when there is a record for the identifier" do
       it "returns an array" do
-        works = Classifoclc::lookup(:identifier => 'isbn',
-                                    :value => '0151592659')
+        works = Classifoclc::isbn('0151592659')
         expect(works).to be_a Array
         expect(works.count).to eq 1
         expect(works.first).to be_a Classifoclc::Work
@@ -68,8 +53,7 @@ RSpec.describe Classifoclc do
 
     context "when there are multiple works" do
       it "returns an array of works" do
-        works = Classifoclc::lookup(:identifier => 'isbn',
-                                    :value => '0851775934')
+        works = Classifoclc::isbn('0851775934')
 
         expect(works).to be_a Array
         expect(works.count).to eq 2

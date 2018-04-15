@@ -8,7 +8,19 @@ require "nokogiri"
 require "open-uri"
 
 module Classifoclc
-  def self.lookup(hsh)
+  def self.isbn(isbn)
+    lookup(:identifier => 'isbn', :value => isbn, :summary => true)
+  end
+
+  def self.owi(owi)
+    lookup(:identifier => 'owi', :value  => owi, :summary => true)
+  end
+
+  def self.oclc(oclc, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::OCLC, :value  => oclc}))
+  end
+
+  private_class_method def self.lookup(hsh)
     parsed = fetch_data(hsh)
     resp_code = parsed.css('response').first['code']
 
@@ -45,18 +57,6 @@ module Classifoclc
     end
 
     return parsed.css('work').map{|w| Work::new(w, parsed.css('author'))}
-  end
-
-  def self.isbn(isbn)
-    lookup(:identifier => 'isbn', :value => isbn, :summary => true)
-  end
-
-  def self.owi(owi)
-    lookup(:identifier => 'owi', :value  => owi, :summary => true)
-  end
-
-  def self.oclc(oclc, hsh = {})
-    lookup(default_options(hsh, {:identifier => Id::OCLC, :value  => oclc}))
   end
 
   private_class_method def self.default_options(hsh1, hsh2 = {})
