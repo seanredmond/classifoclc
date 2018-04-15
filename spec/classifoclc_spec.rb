@@ -97,11 +97,32 @@ RSpec.describe Classifoclc do
   end
   
   describe "#oclc" do
-    it "calls #lookup with an OCLC" do
-      expect(Classifoclc).
-        to receive(:lookup).
-             with({:identifier=>"oclc", :value=>"2005960", :summary=>true})
-      Classifoclc::oclc("2005960")
+    context "with default options" do 
+      it "calls #lookup with an OCLC" do
+        expect(Classifoclc).
+          to receive(:lookup).
+               with({:identifier => Classifoclc::Id::OCLC,
+                     :value => "2005960",
+                     :summary=>true,
+                     :orderby => Classifoclc::OrderBy::HOLDINGS,
+                     :order => Classifoclc::Order::ASC})
+        Classifoclc::oclc("2005960")
+      end
+    end
+
+    context "with non-default options" do
+      it "calls #lookup with the correct parameters" do
+        expect(Classifoclc).
+          to receive(:lookup).
+               with({:identifier => Classifoclc::Id::OCLC,
+                     :value => "2005960",
+                     :summary => false,
+                     :orderby => Classifoclc::OrderBy::EDITIONS,
+                     :order => Classifoclc::Order::DESC})
+        Classifoclc::oclc("2005960", :summary => false,
+                          :orderby => Classifoclc::OrderBy::EDITIONS,
+                          :order => Classifoclc::Order::DESC)
+      end
     end
   end
 

@@ -1,4 +1,5 @@
 require "classifoclc/author.rb"
+require "classifoclc/constants.rb"
 require "classifoclc/edition.rb"
 require "classifoclc/errors.rb"
 require "classifoclc/version"
@@ -70,8 +71,14 @@ module Classifoclc
     lookup(:identifier => 'owi', :value  => owi, :summary => true)
   end
 
-  def self.oclc(oclc)
-    lookup(:identifier => 'oclc', :value  => oclc, :summary => true)
+  def self.oclc(oclc, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::OCLC, :value  => oclc}))
+  end
+
+  private_class_method def self.default_options(hsh1, hsh2 = {})
+    {:orderby => OrderBy::HOLDINGS,
+     :order => Order::ASC,
+     :summary => true}.merge(hsh1).merge(hsh2)
   end
   
 end

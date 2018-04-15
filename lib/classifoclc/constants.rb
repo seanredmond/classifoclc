@@ -1,0 +1,30 @@
+module Classifoclc
+  module Id
+    STDNBR  = :stdnbr
+    OCLC    = :oclc
+    ISBN    = :isbn
+    ISSN    = :issn
+    UPC     = :upc
+    IDENT   = :ident
+    HEADING = :heading
+    OWI     = :owi
+    AUTHOR  = :author
+    TITLE   = :title
+  end
+
+  module OrderBy
+    EDITIONS  = :mancount
+    HOLDINGS  = :hold
+    FIRSTYEAR = :lyr
+    LASTYEAR  = :hyr
+    LANGUAGE  = :ln
+    HEADING   = :sheading
+    WORKS     = :works
+    SUBJTYPE  = :type
+  end
+
+  module Order
+    ASC  = :asc
+    DESC = :desc
+  end
+end
