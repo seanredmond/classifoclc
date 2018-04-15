@@ -24,7 +24,7 @@ RSpec.describe Classifoclc do
           to raise_error Classifoclc::UnexpectedError
       end
 
-      it "raises an error if there will be an infinite loop" do
+      it "raises an error if there will be an infinite loop", :loop => true do
         expect { works = Classifoclc::lookup(:identifier => 'isbn',
                                              :value => '0060205253') }.
           to raise_error Classifoclc::InfiniteLoopError

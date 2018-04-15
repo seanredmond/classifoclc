@@ -35,37 +35,37 @@ RSpec.configure do |config|
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "500error", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(status: 500)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "timeout", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_timeout
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"zzz" => "does not matter", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_BADP)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "0151592659zz", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_BADF)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "8765432109", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_NOTF)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "unexpected", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_UNEXPECTED)
     
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "0151592659", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_MERIDIAN)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
@@ -80,26 +80,26 @@ RSpec.configure do |config|
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "0851775934", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_MULT)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"owi" => "4095816718", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_MULTA)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"owi" => "3375745328", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_MULTB)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"owi" => "979229", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_LOOP)
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "0060205253", "summary" => "true",
-                   "maxRecs" => "25"}).
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_HASLOOP)
   end
 end

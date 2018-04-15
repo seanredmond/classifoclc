@@ -8,18 +8,8 @@ require "nokogiri"
 require "open-uri"
 
 module Classifoclc
-  URI = "http://classify.oclc.org/classify2/Classify?%s=%s&summary=%s&maxRecs=%d"
-
   def self.lookup(hsh)
-
-    max = hsh.fetch(:max, 25)
-    summary = hsh.fetch(:summary, true)
-    want_editions = hsh.fetch(:want_editions, false)
-
-    resp = open(URI % [hsh[:identifier], hsh[:value], summary, max]).read
-
-    parsed = Nokogiri::XML(resp)
-
+    parsed = fetch_data(hsh)
     resp_code = parsed.css('response').first['code']
 
     if resp_code == '0' or resp_code == '2'
@@ -29,7 +19,7 @@ module Classifoclc
     if resp_code == '4'
       if hsh[:identifier] == 'owi'
         if parsed.css('work').map{|w| w['owi']}.include?(hsh[:value])
-          raise Classifoclc::InfiniteLoopError.new("The record for owi %s contains records also with the owi %s. Cannot fetch data as it would lead to an infinite loop")
+          raise Classifoclc::InfiniteLoopError.new("The record for owi %s contains records also with the owi %s. Cannot fetch data as it would lead to an infinite loop" % [hsh[:value], hsh[:value]])
         end
       end
       return parsed.css('work').map{|w| owi(w['owi'])}.flatten
@@ -89,7 +79,7 @@ module Classifoclc
   end
 
   def self.fetch_data(hsh)
-    resp = open(URL % param_string(hsh)).read
+    resp = open(URL % param_string(hsh.clone)).read
     parsed = Nokogiri::XML(resp)
     return parsed
   end
