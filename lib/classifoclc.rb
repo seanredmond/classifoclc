@@ -6,6 +6,7 @@ require "classifoclc/version"
 require "classifoclc/work"
 require "nokogiri"
 require "open-uri"
+require "uri"
 
 module Classifoclc
   def self.isbn(isbn)
@@ -79,7 +80,7 @@ module Classifoclc
     id = hsh.delete(:identifier)
     val = hsh.delete(:value)
     return api_params(default_options({id => val}, hsh))
-             .map{|k,v| "#{k}=#{v}"}.join("&") 
+             .map{|k,v| "#{k}=#{URI.encode_www_form_component(v)}"}.join("&") 
   end
 
   def self.fetch_data(hsh)
