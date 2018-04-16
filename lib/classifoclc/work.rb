@@ -44,12 +44,21 @@ module Classifoclc
       full unless @fetched_full
 
       Enumerator.new do |e|
-        e << @editions
-
+        last_loop = false
         loop do
-          break if @next.nil?
+          @editions.each do |edition|
+            e << edition
+          end
+
+          # stop iterating if the last time we fetched more results we got
+          # the last page
+          break if last_loop
+
+          # otherwise, get the next page of results
           full(:startRec => @next)
-          e << @editions
+
+          # @next will be nil when we have fetched the last page
+          last_loop = true if @next.nil?
         end
       end
     end

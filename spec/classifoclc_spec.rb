@@ -1,3 +1,4 @@
+require "pp"
 RSpec.describe Classifoclc do
   
   it "has a version number" do
@@ -178,19 +179,25 @@ RSpec.describe Classifoclc do
 
     it "has editions", :editions => true do
       eds = @meridian.editions.next
-      expect(eds).to be_a Array
-      expect(eds.count).to eq 25
-      expect(eds.first).to be_a Classifoclc::Edition
+      expect(eds).to be_a Classifoclc::Edition
     end
 
     it "can have multiple pages of editions" do
       eds = @meridian.editions
-      expect(eds.next.first.oclc).to eq "2005960"
-      expect(eds.next.first.oclc).to eq "68252283"
-      expect(eds.next.first.oclc).to eq "21737153"
-      expect(eds.next.first.oclc).to eq "953165537"
-      expect(eds.next.first.oclc).to eq "17757474"
-      expect{eds.next.first.oclc}.to raise_error(StopIteration)
+
+      # Check the expected OCLC number of the first edition on each
+      # page of 25 results
+      expect(eds.next.oclc).to eq "2005960"
+      24.times do eds.next end # rest of page 1. Next call loads next page
+      expect(eds.next.oclc).to eq "68252283"
+      24.times do eds.next end # rest of page 2
+      expect(eds.next.oclc).to eq "21737153"
+      24.times do eds.next end # rest of page 3
+      expect(eds.next.oclc).to eq "953165537"
+      24.times do eds.next end # rest of page 4
+      expect(eds.next.oclc).to eq "17757474"
+      13.times do eds.next end # rest of page 5
+      expect{eds.next.oclc}.to raise_error(StopIteration)
     end
 
     it "can return all the editions" do
@@ -220,8 +227,8 @@ RSpec.describe Classifoclc do
   describe Classifoclc::Edition do
     before(:each) do
       @meridian = Classifoclc::isbn("0151592659").first
-      @editions = @meridian.editions.next
-      @ed = @editions.first
+      @editions = @meridian.editions
+      @ed = @editions.next
     end
 
     it "has an OCLC number" do
