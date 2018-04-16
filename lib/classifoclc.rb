@@ -39,6 +39,14 @@ module Classifoclc
     lookup(default_options(hsh, {:identifier => Id::AUTHOR, :value  => auth}))
   end
 
+  def self.title(title, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::TITLE, :value  => title}))
+  end
+
+  def self.fast(ident, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::IDENT, :value  => ident}))
+  end
+  
   private_class_method def self.lookup(hsh)
     parsed = fetch_data(hsh)
     resp_code = parsed.css('response').first['code']

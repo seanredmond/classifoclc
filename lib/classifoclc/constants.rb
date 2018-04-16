@@ -14,6 +14,8 @@ module Classifoclc
     UPC     = :upc
     OWI     = :owi
     AUTHOR  = :author
+    TITLE   = :title
+    IDENT   = :ident
   end
 
   module OrderBy
