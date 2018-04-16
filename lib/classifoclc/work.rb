@@ -1,4 +1,3 @@
-require "pp"
 module Classifoclc
   class Work
     attr_reader :authors
