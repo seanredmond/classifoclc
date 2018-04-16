@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 771
+Date: Mon, 16 Apr 2018 17:56:14 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="0"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Exley, Frederick" editions="1" eholdings="0" format="Article" holdings="1" itemtype="itemtype-artchap-artcl" owi="1358899616" title="Questions for Gloria Steinem">847744200</work>
+  <authors>
+    <author lc="n84191712" viaf="91412810">Exley, Frederick</author>
+  </authors>
+  <orderBy>hold desc</orderBy>
+  <input type="owi">1358899616</input>
+  <recommendations>
+    <lcc>
+      <mostPopular holdings="1" nsfa="PS3555.X58" sfa="PS3555.X58"/>
+      <mostRecent holdings="1" sfa="PS3555.X58"/>
+    </lcc>
+  </recommendations>
+</classify>

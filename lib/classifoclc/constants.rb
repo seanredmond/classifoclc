@@ -13,6 +13,7 @@ module Classifoclc
     ISSN    = :issn
     UPC     = :upc
     OWI     = :owi
+    AUTHOR  = :author
   end
 
   module OrderBy

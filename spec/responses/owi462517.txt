@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 944
+Date: Mon, 16 Apr 2018 17:52:10 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="0"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Exley, Frederick" editions="11" eholdings="28" format="Book" holdings="602" itemtype="itemtype-book" owi="462517" title="Pages from a cold island">1104319</work>
+  <authors>
+    <author lc="n84191712" viaf="91412810">Exley, Frederick</author>
+  </authors>
+  <orderBy>hold desc</orderBy>
+  <input type="owi">462517</input>
+  <recommendations>
+    <ddc>
+      <mostPopular holdings="620" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="620" sfa="813.54"/>
+      <latestEdition holdings="22" sf2="22" sfa="813.54"/>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="607" nsfa="PS3555.X58" sfa="PS3555.X58"/>
+      <mostRecent holdings="607" sfa="PS3555.X58"/>
+    </lcc>
+  </recommendations>
+</classify>

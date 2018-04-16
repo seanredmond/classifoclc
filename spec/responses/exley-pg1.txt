@@ -1,0 +1,36 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1614
+Date: Mon, 16 Apr 2018 17:37:15 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="4"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <workCount>6</workCount>
+  <start>0</start>
+  <maxRecs>4</maxRecs>
+  <orderBy>thold desc</orderBy>
+  <input type="author">Frederick+Exley</input>
+  <works>
+    <work author="Exley, Frederick | Hornby, Nick [Author of introduction] | Aronson, Philippe [Translator] | Schmidt, Jérôme [Translator]" editions="60" format="Book" holdings="1386" hyr="2013" itemtype="itemtype-book" lyr="1968" owi="1665593" schemes="DDC LCC" title="A fan's notes : a fictional memoir" wi="1005459742"/>
+    <work author="Exley, Frederick" editions="11" format="Book" holdings="630" hyr="2013" itemtype="itemtype-book" lyr="1975" owi="462517" schemes="DDC LCC" title="Pages from a cold island" wi="1104319"/>
+    <work author="Exley, Frederick" editions="10" format="Book" holdings="496" hyr="2012" itemtype="itemtype-book" lyr="1988" owi="15394518" schemes="DDC LCC" title="Last notes from home" wi="17201106"/>
+    <work author="Edwards, Ivo Arthyr Exley, 1881- | Tymms, Frederick, 1889-1987 [Author]" editions="5" format="Book" holdings="83" hyr="1926" itemtype="itemtype-book" lyr="1926" owi="2208251" schemes="DDC LCC" title="Commercial air transport" wi="1278558"/>
+  </works>
+  <navigation>
+    <pages>
+      <page>
+        <label>1</label>
+      </page>
+      <page>
+        <label>2</label>
+        <link>4</link>
+      </page>
+    </pages>
+    <next>4</next>
+    <last>4</last>
+  </navigation>
+</classify>

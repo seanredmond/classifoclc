@@ -35,8 +35,14 @@ RSpec.describe Classifoclc do
           to raise_error Classifoclc::UnexpectedError
       end
 
+      it "raises an error on a response code we don't recognize" do
+        expect {works = Classifoclc::isbn('unhandled')}.
+          to raise_error Classifoclc::UnexpectedError
+      end
+
       it "raises an error if there will be an infinite loop", :loop => true do
-        expect { works = Classifoclc::isbn('0060205253') }.
+        works = Classifoclc::isbn('0060205253')
+        expect { works.next }.
           to raise_error Classifoclc::InfiniteLoopError
       end
     end
@@ -51,17 +57,17 @@ RSpec.describe Classifoclc do
     context "when there is no record for the identifier" do
       it "returns an empty array" do
         works = Classifoclc::isbn('8765432109')
-        expect(works).to be_a Array
-        expect(works).to be_empty
+        expect(works).to be_a Enumerator
+        expect(works.to_a).to be_empty
       end
     end
 
     context "when there is a record for the identifier" do
       it "returns an array" do
         works = Classifoclc::isbn('0151592659')
-        expect(works).to be_a Array
-        expect(works.count).to eq 1
-        expect(works.first).to be_a Classifoclc::Work
+        expect(works).to be_a Enumerator
+#        expect(works.count).to eq 1
+        expect(works.next).to be_a Classifoclc::Work
       end
     end
 
@@ -69,9 +75,9 @@ RSpec.describe Classifoclc do
       it "returns an array of works" do
         works = Classifoclc::isbn('0851775934')
 
-        expect(works).to be_a Array
+        expect(works).to be_a Enumerator
         expect(works.count).to eq 2
-        expect(works[0]).to be_a Classifoclc::Work
+        expect(works.next).to be_a Classifoclc::Work
       end
     end
   end
@@ -134,6 +140,17 @@ RSpec.describe Classifoclc do
                           :orderby => Classifoclc::OrderBy::EDITIONS,
                           :order => Classifoclc::Order::DESC)
       end
+    end
+  end
+
+  describe "#author", :author => true do
+    it "returns an Enumerator of works" do
+      Classifoclc::maxRecs = 4
+      works = Classifoclc::author("Frederick Exley")
+      expect(works.to_a.count).to eq 6
+      expect(works.to_a.first.owi).to eq "1358899616"
+      expect(works.to_a.last.owi).to eq "867255897"
+      Classifoclc::maxRecs = 25
     end
   end
 

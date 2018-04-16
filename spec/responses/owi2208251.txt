@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1029
+Date: Mon, 16 Apr 2018 17:54:21 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="0"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Edwards, Ivo Arthyr Exley, 1881- | Tymms, Frederick, 1889-1987 [Author]" editions="5" eholdings="3" format="Book" holdings="80" itemtype="itemtype-book" owi="2208251" title="Commercial air transport,">1278558</work>
+  <authors>
+    <author lc="null" viaf="671151246622744132961">Edwards, Ivo Arthyr Exley, 1881-</author>
+    <author lc="n96056404" viaf="43568503">Tymms, Frederick, 1889-1987 [Author]</author>
+  </authors>
+  <orderBy>hold desc</orderBy>
+  <input type="owi">2208251</input>
+  <recommendations>
+    <ddc>
+      <mostPopular holdings="74" nsfa="387.7" sfa="387.7"/>
+      <mostRecent holdings="74" sfa="387.7"/>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="77" nsfa="TL552" sfa="TL552"/>
+      <mostRecent holdings="1" sfa="V112"/>
+    </lcc>
+  </recommendations>
+</classify>

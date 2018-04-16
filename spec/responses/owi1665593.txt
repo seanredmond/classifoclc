@@ -1,0 +1,32 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1323
+Date: Mon, 16 Apr 2018 17:50:39 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="0"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Exley, Frederick | Hornby, Nick [Author of introduction] | Aronson, Philippe [Translator] | Schmidt, Jérôme [Translator]" editions="60" eholdings="49" format="Book" holdings="1337" itemtype="itemtype-book" owi="1665593" title="A fan's notes : a fictional memoir">1005459742</work>
+  <authors>
+    <author lc="n84191712" viaf="91412810">Exley, Frederick</author>
+    <author lc="no2010038744" viaf="69167767">Schmidt, Jérôme [Translator]</author>
+    <author lc="n91044258" viaf="76432329">Hornby, Nick [Author of introduction]</author>
+    <author lc="null" viaf="10062379">Aronson, Philippe [Translator]</author>
+  </authors>
+  <orderBy>hold desc</orderBy>
+  <input type="owi">1665593</input>
+  <recommendations>
+    <ddc>
+      <mostPopular holdings="1266" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="1266" sfa="813.54"/>
+      <latestEdition holdings="1" sf2="23" sfa="813.54"/>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="1252" nsfa="PS3555.X58" sfa="PS3555.X58"/>
+      <mostRecent holdings="1252" sfa="PS3555.X58"/>
+    </lcc>
+  </recommendations>
+</classify>

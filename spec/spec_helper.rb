@@ -9,6 +9,7 @@ RESP_BADP = File.new(File.join(RESP_DIR, 'bad_param.txt')).read
 RESP_BADF = File.new(File.join(RESP_DIR, 'bad_format.txt')).read
 RESP_NOTF = File.new(File.join(RESP_DIR, 'not_found.txt')).read
 RESP_UNEXPECTED = File.new(File.join(RESP_DIR, 'unexpected.txt')).read
+RESP_UNHANDLED = File.new(File.join(RESP_DIR, 'unhandled.txt')).read
 RESP_MERIDIAN = File.new(File.join(RESP_DIR, '0151592659.txt')).read
 RESP_FULL = File.new(File.join(RESP_DIR, '0151592659-full.txt')).read
 RESP_FULL2 = File.new(File.join(RESP_DIR, '0151592659-full-pg2.txt')).read
@@ -20,6 +21,15 @@ RESP_MULTA = File.new(File.join(RESP_DIR, 'multiple-a.txt')).read
 RESP_MULTB = File.new(File.join(RESP_DIR, 'multiple-b.txt')).read
 RESP_LOOP = File.new(File.join(RESP_DIR, '979229.txt')).read
 RESP_HASLOOP = File.new(File.join(RESP_DIR, '0060205253.txt')).read
+RESP_EXLEY1 = File.new(File.join(RESP_DIR, 'exley-pg1.txt')).read
+RESP_EXLEY2 = File.new(File.join(RESP_DIR, 'exley-pg2.txt')).read
+RESP_1665593 = File.new(File.join(RESP_DIR, 'owi1665593.txt')).read
+RESP_462517 = File.new(File.join(RESP_DIR, 'owi462517.txt')).read
+RESP_15394518 = File.new(File.join(RESP_DIR, 'owi15394518.txt')).read
+RESP_2208251 = File.new(File.join(RESP_DIR, 'owi2208251.txt')).read
+RESP_1358899616 = File.new(File.join(RESP_DIR, 'owi1358899616.txt')).read
+RESP_867255897 = File.new(File.join(RESP_DIR, 'owi867255897.txt')).read
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -66,6 +76,11 @@ RSpec.configure do |config|
       with(query: {"isbn" => "unexpected", "summary" => "true",
                    "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_UNEXPECTED)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"isbn" => "unhandled", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
+      to_return(RESP_UNHANDLED)
     
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "0151592659", "summary" => "true",
@@ -126,10 +141,52 @@ RSpec.configure do |config|
       with(query: {"owi" => "979229", "summary" => "true",
                    "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_LOOP)
+
     stub_request(:get, "classify.oclc.org/classify2/Classify").
       with(query: {"isbn" => "0060205253", "summary" => "true",
                    "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_HASLOOP)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"author" => "Frederick Exley", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_EXLEY1)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"author" => "Frederick Exley", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4",
+                   "startRec" => "4"}).
+      to_return(RESP_EXLEY2)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "1665593", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_1665593)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "462517", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_462517)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "15394518", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_15394518)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "2208251", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_2208251)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "1358899616", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_1358899616)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "867255897", "summary" => "true",
+                   "orderBy" => "hold desc", "maxRecs" => "4"}).
+      to_return(RESP_867255897)
   end
 end
 

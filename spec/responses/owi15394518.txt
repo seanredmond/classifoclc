@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 945
+Date: Mon, 16 Apr 2018 17:53:14 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="0"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Exley, Frederick" editions="10" eholdings="23" format="Book" holdings="473" itemtype="itemtype-book" owi="15394518" title="Last notes from home">17201106</work>
+  <authors>
+    <author lc="n84191712" viaf="91412810">Exley, Frederick</author>
+  </authors>
+  <orderBy>hold desc</orderBy>
+  <input type="owi">15394518</input>
+  <recommendations>
+    <ddc>
+      <mostPopular holdings="490" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="490" sfa="813.54"/>
+      <latestEdition holdings="19" sf2="23" sfa="813.54"/>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="475" nsfa="PS3555.X58" sfa="PS3555.X58"/>
+      <mostRecent holdings="475" sfa="PS3555.X58"/>
+    </lcc>
+  </recommendations>
+</classify>

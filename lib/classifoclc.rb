@@ -35,23 +35,29 @@ module Classifoclc
     lookup(default_options(hsh, {:identifier => Id::LCCN, :value  => lccn}))
   end
 
+  def self.author(auth, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::AUTHOR, :value  => auth}))
+  end
+
   private_class_method def self.lookup(hsh)
     parsed = fetch_data(hsh)
     resp_code = parsed.css('response').first['code']
 
     if resp_code == '0' or resp_code == '2'
-      return [Work::new(parsed)]
+      return Enumerator.new do |w|
+        w << Work::new(parsed)
+      end
     end
 
-    if resp_code == '4'
+    if resp_code == "4"
       if hsh[:identifier] == 'owi'
         if parsed.css('work').map{|w| w['owi']}.include?(hsh[:value])
           raise Classifoclc::InfiniteLoopError.new("The record for owi %s contains records also with the owi %s. Cannot fetch data as it would lead to an infinite loop" % [hsh[:value], hsh[:value]])
         end
       end
-      return parsed.css('work').map{|w| owi(w['owi'])}.flatten
+      return multiwork(parsed, hsh)
     end
-
+    
     if resp_code == '100'
       raise BadIdentifierError.
               new "%s is not allowed as an identifer" % hsh[:identifier]
@@ -64,14 +70,35 @@ module Classifoclc
     end
 
     if resp_code =='102'
-      return []
+      return Enumerator.new do |w|
+      end
     end
 
     if resp_code == '200'
       raise UnexpectedError.new "Unexpected error"
     end
+    
+    raise UnexpectedError.new "Unexpected response code %s" % resp_code
+  end
 
-    return parsed.css('work').map{|w| Work::new(w, parsed.css('author'))}
+  private_class_method def self.multiwork(parsed, hsh)
+    return Enumerator.new do |work|
+      loop do
+        if parsed.css("navigation next").empty?
+          next_page = nil
+        else
+          next_page = parsed.css("navigation next").first.text
+        end
+        
+        parsed.css('work').each do |multi|
+          owi(multi['owi']).each do |w|
+            work << w
+          end
+        end
+        break if next_page.nil?
+        parsed = fetch_data(hsh.clone.merge({:startRec => next_page}))
+      end
+    end
   end
 
   private_class_method def self.default_options(hsh1, hsh2 = {})
