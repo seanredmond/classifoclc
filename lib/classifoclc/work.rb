@@ -7,9 +7,6 @@ module Classifoclc
       @work = node.css('work').first
       @authors = node.css('author').
                  map{|a| Classifoclc::Author.new(a.text, a['lc'], a['viaf'])}
-      @editions = nil
-      @fetched_full = false
-      @page = nil
     end
 
     def owi
@@ -41,24 +38,11 @@ module Classifoclc
     end
 
     def editions
-      full unless @fetched_full
-
       Enumerator.new do |e|
-        last_loop = false
-        loop do
-          @editions.each do |edition|
+        pages.each do |pg|
+          pg.each do |edition|
             e << edition
           end
-
-          # stop iterating if the last time we fetched more results we got
-          # the last page
-          break if last_loop
-
-          # otherwise, get the next page of results
-          full(:startRec => @next)
-
-          # @next will be nil when we have fetched the last page
-          last_loop = true if @next.nil?
         end
       end
     end
@@ -67,34 +51,37 @@ module Classifoclc
       params = {:identifier => 'owi', :value => owi,
                 :summary => false}.merge(hsh)
       data = Classifoclc::fetch_data(params)
-      @editions = data.css('edition').map{|e| Edition::new(e)}
-      @fetched_full = true
+      editions = data.css('edition').map{|e| Edition::new(e)}
 
       navigation = data.css("navigation")
 
-      if navigation.empty?
-        @next = nil
-        @last = nil
-      else
+      next_page = nil
+      unless navigation.empty?
         n = data.css("navigation next").first
-        l = data.css("navigation last").first
 
         if n.nil?
-          @next = nil
+          next_page = nil
         else
-          @next = n.text.to_i
-        end
-
-        if l.nil?
-          @last = nil
-        else
-          @last = l.text.to_i
+          next_page = n.text.to_i
         end
       end
-      
+
+      return {:editions => editions, :next => next_page}
     end
 
+    # Iterate over pages of results
+    def pages
+      hsh = full()
+      Enumerator.new do |page|
+        page << hsh[:editions]
+        loop do
+          break if hsh[:next].nil?
+          hsh = full(:startRec => hsh[:next])
+          page << hsh[:editions]
+        end
+      end
+    end
 
-    private :full
+    private :full, :pages
   end
 end
