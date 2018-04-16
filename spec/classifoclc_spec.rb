@@ -4,6 +4,19 @@ RSpec.describe Classifoclc do
     expect(Classifoclc::VERSION).not_to be nil
   end
 
+  describe "#maxRecs" do
+    it "returns the default value" do
+      expect(Classifoclc::maxRecs).to eq 25
+    end
+
+    it "can be changed", :maxrecs => true do
+      expect(Classifoclc::maxRecs).to eq 25
+      Classifoclc::maxRecs = 100
+      expect(Classifoclc::maxRecs).to eq 100
+      Classifoclc::maxRecs = 25
+    end
+  end
+  
   describe "#lookup" do
     context "when there is trouble" do
       it "passes errors on up" do
@@ -163,11 +176,26 @@ RSpec.describe Classifoclc do
       expect(@meridian.authors).to be_a Array
     end
 
-    it "has editions" do
-      eds = @meridian.editions
+    it "has editions", :editions => true do
+      eds = @meridian.editions.next
       expect(eds).to be_a Array
-      expect(eds.count).to eq 114
+      expect(eds.count).to eq 25
       expect(eds.first).to be_a Classifoclc::Edition
+    end
+
+    it "can have multiple pages of editions" do
+      eds = @meridian.editions
+      expect(eds.next.first.oclc).to eq "2005960"
+      expect(eds.next.first.oclc).to eq "68252283"
+      expect(eds.next.first.oclc).to eq "21737153"
+      expect(eds.next.first.oclc).to eq "953165537"
+      expect(eds.next.first.oclc).to eq "17757474"
+      expect{eds.next.first.oclc}.to raise_error(StopIteration)
+    end
+
+    it "can return all the editions" do
+      eds = @meridian.editions
+      expect(eds.map{|e| e}.flatten.count).to eq 114
     end
   end
 
@@ -192,7 +220,7 @@ RSpec.describe Classifoclc do
   describe Classifoclc::Edition do
     before(:each) do
       @meridian = Classifoclc::isbn("0151592659").first
-      @editions = @meridian.editions
+      @editions = @meridian.editions.next
       @ed = @editions.first
     end
 

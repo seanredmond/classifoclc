@@ -9,6 +9,16 @@ require "open-uri"
 require "uri"
 
 module Classifoclc
+  @@maxRecs = 25
+
+  def self.maxRecs
+    @@maxRecs
+  end
+
+  def self.maxRecs= m
+    @@maxRecs = m
+  end
+  
   def self.isbn(isbn)
     lookup(:identifier => 'isbn', :value => isbn, :summary => true)
   end
@@ -67,7 +77,7 @@ module Classifoclc
   private_class_method def self.default_options(hsh1, hsh2 = {})
     {:orderby => OrderBy::HOLDINGS,
      :order => Order::DESC,
-     :maxRecs => 25,
+     :maxRecs => maxRecs,
      :summary => true}.merge(hsh1).merge(hsh2)
   end
 

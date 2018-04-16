@@ -3,7 +3,7 @@ Server: Apache-Coyote/1.1
 Cache-Control: no-cache
 Content-Type: text/xml;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Tue, 10 Apr 2018 17:06:47 GMT
+Date: Mon, 16 Apr 2018 00:01:21 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <classify xmlns="http://classify.oclc.org">
@@ -14,9 +14,9 @@ Date: Tue, 10 Apr 2018 17:06:47 GMT
     <author lc="n79109131" viaf="108495772">Walker, Alice, 1944-</author>
   </authors>
   <orderBy>thold desc</orderBy>
-  <input type="owi">201096</input>
+  <input type="isbn">0151592659</input>
   <start>0</start>
-  <maxRecs>114</maxRecs>
+  <maxRecs>25</maxRecs>
   <editions>
     <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1420" itemtype="itemtype-book" language="eng" oclc="2005960" title="Meridian">
       <classifications>
@@ -145,234 +145,6 @@ Date: Tue, 10 Apr 2018 17:06:47 GMT
     </edition>
     <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="7" itemtype="itemtype-book" language="ger" oclc="165761707" title="Meridian : [Roman]"/>
     <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="7" itemtype="itemtype-book" language="dut" oclc="63307517" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="7" itemtype="itemtype-book" language="dut" oclc="68252283" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="6" itemtype="itemtype-book" language="eng" oclc="490027378" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="5" itemtype="itemtype-book" language="eng" oclc="832210772" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="FIC" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="5" itemtype="itemtype-book" language="ita" oclc="797918404" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="5" itemtype="itemtype-book" language="eng" oclc="733967896" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="4" itemtype="itemtype-book" language="dut" oclc="64332838" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="4" itemtype="itemtype-book" language="ita" oclc="797210898" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="4" itemtype="itemtype-book" language="ger" oclc="75366408" title="Meridian : Roman"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="4" itemtype="itemtype-book" language="eng" oclc="612048879" title="Meridian : [a novel]"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="4" itemtype="itemtype-book" language="eng" oclc="809534665" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="dan" oclc="466462834" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="471155863" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="873644231" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-        <class edition="0" ind1="0" ind2=" " sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="494191850" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-        <class edition="22" ind1="0" ind2="4" sf2="22" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="255488249" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="489679799" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="800" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="248044108" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="899109124" title="Meridian">
-      <classifications>
-        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="813.54" tag="082"/>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="441049820" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="473193818" title="Meridian">
-      <classifications>
-        <class edition="19" ind1=" " ind2="4" sf2="19" sfa="813.54" tag="082"/>
-        <class ind1="1" ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="491974327" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="und" oclc="256686813" title="Meridian.">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="dan" oclc="60985864" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="470931813" title="Meridian">
-      <classifications>
-        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="813.54" tag="082"/>
-        <class ind1="1" ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="258523398" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="ger" oclc="21737153" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="899110019" title="Meridian">
-      <classifications>
-        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="813.54" tag="082"/>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="und" oclc="256182260" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Large print book" holdings="2" itemtype="itemtype-book-largeprint" language="eng" oclc="863362318" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-        <class ind1=" " ind2="4" sfa="PZ4.W176" tag="050"/>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="dut" oclc="71406642" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="717110061" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="466354492" title="Meridian">
-      <classifications>
-        <class ind1="1" ind2="4" sfa="PS3573.A425" tag="050"/>
-        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="ger" oclc="258321541" title="Meridian : Roman"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="898951011" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="476816507" title="Meridian."/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="644817372" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="802620314" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="486179081" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="444633517" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="911314797" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="454087397" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="swe" oclc="186048005" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="1002101215" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="979183307" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ger" oclc="247141321" title="Meridian : Roman"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Large print book" holdings="1" itemtype="itemtype-book-largeprint" language="eng" oclc="1015356017" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="934030867" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Large print book" holdings="1" itemtype="itemtype-book-largeprint" language="eng" oclc="870870544" title="Meridian">
-      <classifications>
-        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="813.54" tag="082"/>
-        <class ind1="1" ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="928227255" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="dan" oclc="466628030" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="953165537" title="Meridian"/>
-    <edition eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="dan" oclc="967495173" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="884505553" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ger" oclc="809413071" title="Meridian : Roman"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="925178176" title="Meridian : [a novel]"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="974173909" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="823739977" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="937102771" title="Meridian">
-      <classifications>
-        <class edition="22" ind1="0" ind2="4" sf2="22" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="909406949" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="902099317" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="925181574" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="751501183" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="475185811" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="256790745" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="640078058" title="Meridian."/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="895749367" title="Meridian : [nouvel]"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="829336798" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PZ4.W176" tag="050"/>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="816244919" title="Meridian">
-      <classifications>
-        <class ind1="0" ind2=" " sfa="PS3573.A425" tag="050"/>
-        <class edition="0" ind1="0" ind2=" " sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="750729923" title="Meridian"/>
-    <edition eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="477114854" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="924943999" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="473045021" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="868563089" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="1" ind2="4" sf2="00" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="566647607" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="717448537" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ita" oclc="17757474" title="Meridian">
-      <classifications>
-        <class ind1="1" ind2=" " sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="und" oclc="987165701" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="34415627" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ita" oclc="636160910" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="820394496" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="917230171" title="Meridian">
-      <classifications>
-        <class edition="14" ind1="0" ind2="4" sf2="14" sfa="813.5" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="986706848" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="dut" oclc="906914782" title="Meridian">
-      <classifications>
-        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="809.895" tag="082"/>
-      </classifications>
-    </edition>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="761265137" title="Meridian"/>
-    <edition eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="860307326" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="804742488" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="932244860" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ita" oclc="635933559" title="Meridian"/>
-    <edition author="Walker, Alice, 1944-" eholdings="1" format="eBook" holdings="0" itemtype="itemtype-book-digital" language="eng" oclc="1014311034" title="Meridian">
-      <classifications>
-        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
-        <class edition="23" ind1="0" ind2="4" sf2="23" sfa="813.54" tag="082"/>
-      </classifications>
-    </edition>
   </editions>
   <recommendations>
     <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:9bCk&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
@@ -402,4 +174,21 @@ Date: Tue, 10 Apr 2018 17:06:47 GMT
       <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chs=350x200&amp;chd=e:qNSnDL&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8&amp;chdl=PS3573.A425|PZ4.W176|Unclassified</graph>
     </lcc>
   </recommendations>
+  <navigation>
+    <pages>
+      <page>
+        <label>1</label>
+      </page>
+      <page>
+        <label>2</label>
+        <link>25</link>
+      </page>
+      <page>
+        <label>3</label>
+        <link>50</link>
+      </page>
+    </pages>
+    <next>25</next>
+    <last>100</last>
+  </navigation>
 </classify>

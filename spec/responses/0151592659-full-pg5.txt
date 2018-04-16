@@ -1,0 +1,101 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 6136
+Date: Mon, 16 Apr 2018 00:31:41 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="2"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Walker, Alice, 1944-" editions="114" eholdings="196" format="Book" holdings="3264" itemtype="itemtype-book" owi="201096" title="Meridian">1002101215</work>
+  <authors>
+    <author lc="n79109131" viaf="108495772">Walker, Alice, 1944-</author>
+  </authors>
+  <orderBy>thold desc</orderBy>
+  <input type="isbn">0151592659</input>
+  <start>100</start>
+  <maxRecs>25</maxRecs>
+  <editions>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ita" oclc="17757474" title="Meridian">
+      <classifications>
+        <class ind1="1" ind2=" " sfa="PS3573.A425" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="und" oclc="987165701" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="34415627" title="Meridian">
+      <classifications>
+        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ita" oclc="636160910" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="820394496" title="Meridian">
+      <classifications>
+        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="917230171" title="Meridian">
+      <classifications>
+        <class edition="14" ind1="0" ind2="4" sf2="14" sfa="813.5" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="986706848" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="dut" oclc="906914782" title="Meridian">
+      <classifications>
+        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="809.895" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="761265137" title="Meridian"/>
+    <edition eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="860307326" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="804742488" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="932244860" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="ita" oclc="635933559" title="Meridian"/>
+    <edition author="Walker, Alice, 1944-" eholdings="1" format="eBook" holdings="0" itemtype="itemtype-book-digital" language="eng" oclc="1014311034" title="Meridian">
+      <classifications>
+        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
+        <class edition="23" ind1="0" ind2="4" sf2="23" sfa="813.54" tag="082"/>
+      </classifications>
+    </edition>
+  </editions>
+  <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:9bCk&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chs=475x175&amp;chd=e:OPNEKZKZKZChB2BL&amp;chco=0D0399,124DBA,278BD8,38C9E2,4DEADD,6DF9A8,4DCC82,32AD71&amp;chdl=Southern+States|African+American+women|Voter+registration|Georgia--Atlanta|African+American+college+students|Civil+rights|Civil+rights+movements|Feminist+fiction</graph>
+      <headings>
+        <heading heldby="2945" ident="1244550" src="fast">Southern States</heading>
+        <heading heldby="2684" ident="799438" src="fast">African American women</heading>
+        <heading heldby="2155" ident="1169215" src="fast">Voter registration</heading>
+        <heading heldby="2155" ident="1204627" src="fast">Georgia--Atlanta</heading>
+        <heading heldby="2155" ident="799102" src="fast">African American college students</heading>
+        <heading heldby="529" ident="862627" src="fast">Civil rights</heading>
+        <heading heldby="376" ident="862708" src="fast">Civil rights movements</heading>
+        <heading heldby="257" ident="922766" src="fast">Feminist fiction</heading>
+      </headings>
+    </fast>
+    <ddc>
+      <mostPopular holdings="2632" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="2632" sfa="813.54"/>
+      <latestEdition holdings="162" sf2="23" sfa="813.54"/>
+      <latestEdition holdings="1" sf2="14" sfa="813.5"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chs=350x200&amp;chts=000000,16&amp;chd=e:woLhApAAAAAADNAA&amp;chco=0D0399,124DBA,278BD8,38C9E2,4DEADD,6DF9A8,4DCC82,32AD71&amp;chdl=813.54|FIC|823.91|813|800|813.5+%2F+809.895|Unclassified|Other</graph>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="3221" nsfa="PS3573.A425" sfa="PS3573.A425"/>
+      <mostRecent holdings="3221" sfa="PS3573.A425"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chs=350x200&amp;chd=e:qNSnDL&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8&amp;chdl=PS3573.A425|PZ4.W176|Unclassified</graph>
+    </lcc>
+  </recommendations>
+  <navigation>
+    <prev>75</prev>
+    <pages>
+      <page>
+        <label>4</label>
+        <link>75</link>
+      </page>
+      <page>
+        <label>5</label>
+      </page>
+    </pages>
+  </navigation>
+</classify>
