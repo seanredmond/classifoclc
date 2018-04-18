@@ -5,7 +5,8 @@ module Classifoclc
       @node = node
       @work = node.css('work').first
       @authors = node.css('author').
-                 map{|a| Classifoclc::Author.new(a.text, a['lc'], a['viaf'])}
+                   map{|a| Classifoclc::Author.new(a.text, a['lc'], a['viaf'])}
+      @recommendations = load_recommendations(node)
     end
 
     def owi
@@ -46,6 +47,11 @@ module Classifoclc
       end
     end
 
+    def recommendations
+      puts @recommendations.to_xml
+      @recommendations
+    end
+
     def full(hsh = {})
       params = {:identifier => 'owi', :value => owi,
                 :summary => false}.merge(hsh)
@@ -79,6 +85,13 @@ module Classifoclc
           page << hsh[:editions]
         end
       end
+    end
+
+    def load_recommendations(node)
+      recs = node.css('recommendations')
+      return nil if recs.empty?
+
+      return recs
     end
 
     private :full, :pages

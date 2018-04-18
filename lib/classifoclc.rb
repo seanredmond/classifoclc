@@ -24,7 +24,7 @@ module Classifoclc
   end
 
   def self.owi(owi)
-    lookup(:identifier => 'owi', :value  => owi, :summary => true)
+    lookup(:identifier => 'owi', :value  => owi, :summary => false)
   end
 
   def self.oclc(oclc, hsh = {})

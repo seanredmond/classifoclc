@@ -221,6 +221,10 @@ RSpec.describe Classifoclc do
       eds = @meridian.editions
       expect(eds.map{|e| e}.flatten.count).to eq 114
     end
+
+    it "has recommendations", :recommendations => true do
+      expect(@meridian.recommendations).to be_a Integer
+    end
   end
 
   describe Classifoclc::Author do
