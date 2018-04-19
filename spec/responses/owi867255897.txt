@@ -2,12 +2,12 @@ HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 Cache-Control: no-cache
 Content-Type: text/xml;charset=UTF-8
-Content-Length: 752
-Date: Mon, 16 Apr 2018 17:57:17 GMT
+Content-Length: 1949
+Date: Thu, 19 Apr 2018 18:20:40 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <classify xmlns="http://classify.oclc.org">
-  <response code="0"/>
+  <response code="2"/>
   <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
   <work author="Exley, Frederick" editions="1" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" owi="867255897" title="Frederick Exley papers,">713325190</work>
   <authors>
@@ -15,10 +15,29 @@ Date: Mon, 16 Apr 2018 17:57:17 GMT
   </authors>
   <orderBy>hold desc</orderBy>
   <input type="owi">867255897</input>
+  <start>0</start>
+  <maxRecs>4</maxRecs>
+  <editions>
+    <edition author="Exley, Frederick" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="713325190" title="Frederick Exley papers">
+      <classifications>
+        <class ind1=" " ind2="4" sfa="PS3555.X58" tag="050"/>
+      </classifications>
+    </edition>
+  </editions>
   <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:..&amp;chco=0D0399&amp;chs=350x200&amp;chts=000000,16&amp;chdl=Classified&amp;chtt=All+Editions</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chs=475x175&amp;chd=e:VVVVVV&amp;chco=0D0399,124DBA,278BD8&amp;chdl=Exley%2C+Frederick|Authors%2C+American|Autobiographical+fiction</graph>
+      <headings>
+        <heading heldby="1" ident="139796" src="fast">Exley, Frederick</heading>
+        <heading heldby="1" ident="821764" src="fast">Authors, American</heading>
+        <heading heldby="1" ident="822535" src="fast">Autobiographical fiction</heading>
+      </headings>
+    </fast>
     <lcc>
       <mostPopular holdings="1" nsfa="PS3555.X58" sfa="PS3555.X58"/>
       <mostRecent holdings="1" sfa="PS3555.X58"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chd=e:..&amp;chco=0D0399&amp;chs=350x200&amp;chts=000000,16&amp;chdl=PS3555.X58</graph>
     </lcc>
   </recommendations>
 </classify>

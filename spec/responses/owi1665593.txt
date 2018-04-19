@@ -2,12 +2,12 @@ HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 Cache-Control: no-cache
 Content-Type: text/xml;charset=UTF-8
-Content-Length: 1323
-Date: Mon, 16 Apr 2018 17:50:39 GMT
+Content-Length: 4241
+Date: Thu, 19 Apr 2018 18:18:39 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <classify xmlns="http://classify.oclc.org">
-  <response code="0"/>
+  <response code="2"/>
   <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
   <work author="Exley, Frederick | Hornby, Nick [Author of introduction] | Aronson, Philippe [Translator] | Schmidt, Jérôme [Translator]" editions="60" eholdings="49" format="Book" holdings="1337" itemtype="itemtype-book" owi="1665593" title="A fan's notes : a fictional memoir">1005459742</work>
   <authors>
@@ -18,15 +18,71 @@ Date: Mon, 16 Apr 2018 17:50:39 GMT
   </authors>
   <orderBy>hold desc</orderBy>
   <input type="owi">1665593</input>
+  <start>0</start>
+  <maxRecs>4</maxRecs>
+  <editions>
+    <edition author="Exley, Frederick" eholdings="0" format="Book" holdings="448" itemtype="itemtype-book" language="eng" oclc="712491" title="A fan's notes : a fictional memoir">
+      <classifications>
+        <class ind1="0" ind2="0" sfa="PZ4.E964" tag="050"/>
+        <class edition="0" ind1=" " ind2="4" sf2="00" sfa="813.54" tag="082"/>
+        <class ind1="0" ind2="0" sfa="PS3555.X58" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Exley, Frederick" eholdings="0" format="Book" holdings="269" itemtype="itemtype-book" language="eng" oclc="18603171" title="A fan's notes : a fictional memoir">
+      <classifications>
+        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="813.54" tag="082"/>
+        <class ind1="0" ind2="0" sfa="PS3555.X58" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Exley, Frederick" eholdings="0" format="Book" holdings="159" itemtype="itemtype-book" language="eng" oclc="1277555" title="A fan's notes : a fictional memoir">
+      <classifications>
+        <class ind1="1" ind2="0" sfa="PS3555.X58" tag="050"/>
+        <class edition="0" ind1="0" ind2="0" sf2="00" sfa="813.54" tag="082"/>
+        <class ind1="1" ind2="0" sfa="PZ4.E964" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Exley, Frederick" eholdings="0" format="Book" holdings="141" itemtype="itemtype-book" language="eng" oclc="36379807" title="A fan's notes">
+      <classifications>
+        <class edition="21" ind1="0" ind2="0" sf2="21" sfa="813.54" tag="082"/>
+        <class ind1="0" ind2="0" sfa="PS3555.X58" tag="050"/>
+      </classifications>
+    </edition>
+  </editions>
   <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:9bCk&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:..&amp;chco=0D0399&amp;chs=475x175&amp;chdl=Football+fans</graph>
+      <headings>
+        <heading heldby="1251" ident="931417" src="fast">Football fans</heading>
+      </headings>
+    </fast>
     <ddc>
       <mostPopular holdings="1266" nsfa="813.54" sfa="813.54"/>
       <mostRecent holdings="1266" sfa="813.54"/>
       <latestEdition holdings="1" sf2="23" sfa="813.54"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chs=350x200&amp;chts=000000,16&amp;chd=e:5qBRBRApAADL&amp;chdl=813.54|823.91|813.5|FIC|813|Unclassified&amp;chco=0D0399,124DBA,278BD8,38C9E2,4DEADD,6DF9A8</graph>
     </ddc>
     <lcc>
       <mostPopular holdings="1252" nsfa="PS3555.X58" sfa="PS3555.X58"/>
       <mostRecent holdings="1252" sfa="PS3555.X58"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chs=350x200&amp;chd=e:n.UAA5DH&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8,38C9E2&amp;chdl=PS3555.X58|PZ4.E964|PS3555|Unclassified</graph>
     </lcc>
   </recommendations>
+  <navigation>
+    <pages>
+      <page>
+        <label>1</label>
+      </page>
+      <page>
+        <label>2</label>
+        <link>4</link>
+      </page>
+      <page>
+        <label>3</label>
+        <link>8</link>
+      </page>
+    </pages>
+    <next>4</next>
+    <last>56</last>
+  </navigation>
 </classify>

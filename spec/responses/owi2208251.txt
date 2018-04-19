@@ -2,12 +2,12 @@ HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 Cache-Control: no-cache
 Content-Type: text/xml;charset=UTF-8
-Content-Length: 1029
-Date: Mon, 16 Apr 2018 17:54:21 GMT
+Content-Length: 3290
+Date: Thu, 19 Apr 2018 18:19:56 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <classify xmlns="http://classify.oclc.org">
-  <response code="0"/>
+  <response code="2"/>
   <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
   <work author="Edwards, Ivo Arthyr Exley, 1881- | Tymms, Frederick, 1889-1987 [Author]" editions="5" eholdings="3" format="Book" holdings="80" itemtype="itemtype-book" owi="2208251" title="Commercial air transport,">1278558</work>
   <authors>
@@ -16,14 +16,54 @@ Date: Mon, 16 Apr 2018 17:54:21 GMT
   </authors>
   <orderBy>hold desc</orderBy>
   <input type="owi">2208251</input>
+  <start>0</start>
+  <maxRecs>4</maxRecs>
+  <editions>
+    <edition author="Edwards, Ivo Arthyr Exley, 1881-" eholdings="0" format="Book" holdings="74" itemtype="itemtype-book" language="eng" oclc="1278558" title="Commercial air transport">
+      <classifications>
+        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="387.7" tag="082"/>
+        <class ind1="0" ind2="0" sfa="TL552" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Edwards, Ivo" eholdings="0" format="Book" holdings="3" itemtype="itemtype-book" language="eng" oclc="252877147" title="Commercial Air Transport"/>
+    <edition author="Edwards, Ivo Arthyr Exley, 1881-" eholdings="0" format="Microform" holdings="2" itemtype="itemtype-book-mic" language="eng" oclc="32064909" title="Commercial air transport"/>
+    <edition author="Edwards, Ivo" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="934046018" title="Commercial air transport">
+      <classifications>
+        <class ind1="1" ind2="4" sfa="V112" tag="050"/>
+      </classifications>
+    </edition>
+  </editions>
   <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:8JD2&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:gAgA&amp;chs=475x175&amp;chco=0D0399,124DBA&amp;chdl=Aeronautics%2C+Commercial|Airships</graph>
+      <headings>
+        <heading heldby="79" ident="798462" src="fast">Aeronautics, Commercial</heading>
+        <heading heldby="79" ident="803860" src="fast">Airships</heading>
+      </headings>
+    </fast>
     <ddc>
       <mostPopular holdings="74" nsfa="387.7" sfa="387.7"/>
       <mostRecent holdings="74" sfa="387.7"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chd=e:49HC&amp;chs=350x200&amp;chts=000000,16&amp;chco=0D0399,124DBA&amp;chdl=387.7|Unclassified</graph>
     </ddc>
     <lcc>
       <mostPopular holdings="77" nsfa="TL552" sfa="TL552"/>
       <mostRecent holdings="1" sfa="V112"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chs=350x200&amp;chd=e:7gApD2&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8&amp;chdl=TL552|V112|Unclassified</graph>
     </lcc>
   </recommendations>
+  <navigation>
+    <pages>
+      <page>
+        <label>1</label>
+      </page>
+      <page>
+        <label>2</label>
+        <link>4</link>
+      </page>
+    </pages>
+    <next>4</next>
+    <last>4</last>
+  </navigation>
 </classify>

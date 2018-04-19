@@ -71,7 +71,7 @@ RSpec.describe Classifoclc do
       end
     end
 
-    context "when there are multiple works" do
+    context "when there are multiple works", :multiple => true do
       it "returns an array of works" do
         works = Classifoclc::isbn('0851775934')
 
@@ -92,10 +92,10 @@ RSpec.describe Classifoclc do
   end
 
   describe "#owi" do
-    it "calls #lookup with an OWI" do
+    it "calls #lookup with an OWI", :owi => true do
       expect(Classifoclc).
         to receive(:lookup).
-             with({:identifier=>"owi", :value=>"201096", :summary=>true})
+             with({:identifier => "owi", :value => "201096", :summary => false})
       Classifoclc::owi("201096")
     end
   end

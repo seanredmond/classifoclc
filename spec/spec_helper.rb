@@ -128,17 +128,17 @@ RSpec.configure do |config|
       to_return(RESP_MULT)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "4095816718", "summary" => "true",
+      with(query: {"owi" => "4095816718", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_MULTA)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "3375745328", "summary" => "true",
+      with(query: {"owi" => "3375745328", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_MULTB)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "979229", "summary" => "true",
+      with(query: {"owi" => "979229", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "25"}).
       to_return(RESP_LOOP)
 
@@ -159,32 +159,32 @@ RSpec.configure do |config|
       to_return(RESP_EXLEY2)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "1665593", "summary" => "true",
+      with(query: {"owi" => "1665593", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_1665593)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "462517", "summary" => "true",
+      with(query: {"owi" => "462517", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_462517)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "15394518", "summary" => "true",
+      with(query: {"owi" => "15394518", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_15394518)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "2208251", "summary" => "true",
+      with(query: {"owi" => "2208251", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_2208251)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "1358899616", "summary" => "true",
+      with(query: {"owi" => "1358899616", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_1358899616)
 
     stub_request(:get, "classify.oclc.org/classify2/Classify").
-      with(query: {"owi" => "867255897", "summary" => "true",
+      with(query: {"owi" => "867255897", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_867255897)
   end
