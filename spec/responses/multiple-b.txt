@@ -2,24 +2,64 @@ HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 Cache-Control: no-cache
 Content-Type: text/xml;charset=UTF-8
-Content-Length: 822
-Date: Tue, 10 Apr 2018 02:39:16 GMT
+Content-Length: 2992
+Date: Thu, 19 Apr 2018 19:50:39 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <classify xmlns="http://classify.oclc.org">
-  <response code="0"/>
+  <response code="2"/>
   <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
   <work author="Gröner, Erich" editions="8" eholdings="0" format="Book" holdings="13" itemtype="itemtype-book" owi="3375745328" title="German warships 1815-1945.">263481284</work>
   <authors>
     <author lc="n83136935" viaf="263832698">Gröner, Erich</author>
   </authors>
-  <orderBy>thold desc</orderBy>
+  <orderBy>hold desc</orderBy>
   <input type="owi">3375745328</input>
+  <start>0</start>
+  <maxRecs>4</maxRecs>
+  <editions>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="6" itemtype="itemtype-book" language="eng" oclc="499215625" title="German warships 1815-1945.">
+      <classifications>
+        <class edition="20" ind1="0" ind2="4" sf2="20" sfa="623.8250943" tag="082"/>
+      </classifications>
+    </edition>
+    <edition eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="929536829" title="German Warships, 1815-1945."/>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="315444645" title="German warships 1815-1945.">
+      <classifications>
+        <class edition="19" ind1="0" ind2="4" sf2="19" sfa="623.8250943" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="861763535" title="German warships, 1815-1945"/>
+  </editions>
   <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:ijdc&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chs=475x175&amp;chd=e:h-PRHYHY&amp;chco=0D0399,124DBA,278BD8,38C9E2&amp;chdl=Ships|Germany.+Kriegsmarine|Warships|Germany</graph>
+      <headings>
+        <heading heldby="9" ident="1116439" src="fast">Ships</heading>
+        <heading heldby="4" ident="546931" src="fast">Germany. Kriegsmarine</heading>
+        <heading heldby="2" ident="1170862" src="fast">Warships</heading>
+        <heading heldby="2" ident="1210272" src="fast">Germany</heading>
+      </headings>
+    </fast>
     <ddc>
       <mostPopular holdings="7" nsfa="623.8250943" sfa="623.8250943"/>
       <mostRecent holdings="7" sfa="623.8250943"/>
       <latestEdition holdings="6" sf2="20" sfa="623.8250943"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chd=e:ijdc&amp;chs=350x200&amp;chts=000000,16&amp;chco=0D0399,124DBA&amp;chdl=623.8250943|Unclassified</graph>
     </ddc>
   </recommendations>
+  <navigation>
+    <pages>
+      <page>
+        <label>1</label>
+      </page>
+      <page>
+        <label>2</label>
+        <link>4</link>
+      </page>
+    </pages>
+    <next>4</next>
+    <last>4</last>
+  </navigation>
 </classify>

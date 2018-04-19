@@ -2,28 +2,82 @@ HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 Cache-Control: no-cache
 Content-Type: text/xml;charset=UTF-8
-Content-Length: 950
-Date: Tue, 10 Apr 2018 02:39:34 GMT
+Content-Length: 3759
+Date: Thu, 19 Apr 2018 19:50:08 GMT
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <classify xmlns="http://classify.oclc.org">
-  <response code="0"/>
+  <response code="2"/>
   <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
   <work author="Gröner, Erich" editions="10" eholdings="0" format="Book" holdings="52" itemtype="itemtype-book" owi="4095816718" title="German warships 1815-1945.">20691916</work>
   <authors>
     <author lc="n83136935" viaf="263832698">Gröner, Erich</author>
   </authors>
-  <orderBy>thold desc</orderBy>
+  <orderBy>hold desc</orderBy>
   <input type="owi">4095816718</input>
+  <start>0</start>
+  <maxRecs>4</maxRecs>
+  <editions>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="29" itemtype="itemtype-book" language="eng" oclc="20691916" title="German warships 1815-1945.">
+      <classifications>
+        <class edition="20" ind1="0" ind2="4" sf2="20" sfa="623.8250943" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="10" itemtype="itemtype-book" language="eng" oclc="24695694" title="German warships 1815-1945.">
+      <classifications>
+        <class edition="20" ind1="0" ind2="4" sf2="20" sfa="623.8250943" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="6" itemtype="itemtype-book" language="eng" oclc="317658301" title="German warships, 1815-1945">
+      <classifications>
+        <class ind1="0" ind2="4" sfa="VA513" tag="050"/>
+        <class edition="0" ind1="0" ind2="0" sf2="00" sfa="359.32" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Gröner, Erich" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="877577870" title="German warships 1815-1945.">
+      <classifications>
+        <class edition="20" ind1="0" ind2="4" sf2="20" sfa="623.8250943" tag="082"/>
+      </classifications>
+    </edition>
+  </editions>
   <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:5mGa&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chs=475x175&amp;chd=e:eoTJHHHH&amp;chco=0D0399,124DBA,278BD8,38C9E2&amp;chdl=Ships|Germany.+Kriegsmarine|Warships|Germany</graph>
+      <headings>
+        <heading heldby="29" ident="1116439" src="fast">Ships</heading>
+        <heading heldby="18" ident="546931" src="fast">Germany. Kriegsmarine</heading>
+        <heading heldby="7" ident="1170862" src="fast">Warships</heading>
+        <heading heldby="7" ident="1210272" src="fast">Germany</heading>
+      </headings>
+    </fast>
     <ddc>
       <mostPopular holdings="41" nsfa="623.8250943" sfa="623.8250943"/>
       <mostRecent holdings="41" sfa="623.8250943"/>
       <latestEdition holdings="41" sf2="20" sfa="623.8250943"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chs=350x200&amp;chd=e:yDHnGV&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8&amp;chdl=623.8250943|359.32|Unclassified</graph>
     </ddc>
     <lcc>
       <mostPopular holdings="6" nsfa="VA513" sfa="VA513"/>
       <mostRecent holdings="6" sfa="VA513"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chd=e:Hr4U&amp;chs=350x200&amp;chts=000000,16&amp;chco=0D0399,124DBA&amp;chdl=VA513|Unclassified</graph>
     </lcc>
   </recommendations>
+  <navigation>
+    <pages>
+      <page>
+        <label>1</label>
+      </page>
+      <page>
+        <label>2</label>
+        <link>4</link>
+      </page>
+      <page>
+        <label>3</label>
+        <link>8</link>
+      </page>
+    </pages>
+    <next>4</next>
+    <last>8</last>
+  </navigation>
 </classify>
