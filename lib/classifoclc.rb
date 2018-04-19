@@ -2,6 +2,7 @@ require "classifoclc/author.rb"
 require "classifoclc/constants.rb"
 require "classifoclc/edition.rb"
 require "classifoclc/errors.rb"
+require "classifoclc/recommendations"
 require "classifoclc/version"
 require "classifoclc/work"
 require "nokogiri"
@@ -51,7 +52,12 @@ module Classifoclc
     parsed = fetch_data(hsh)
     resp_code = parsed.css('response').first['code']
 
-    if resp_code == '0' or resp_code == '2'
+    if resp_code == '0'
+      owid = parsed.css('work').first['owi']
+      return owi(owid)
+    end
+
+    if resp_code == '2'
       return Enumerator.new do |w|
         w << Work::new(parsed)
       end

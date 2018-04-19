@@ -48,7 +48,6 @@ module Classifoclc
     end
 
     def recommendations
-      puts @recommendations.to_xml
       @recommendations
     end
 
@@ -91,7 +90,7 @@ module Classifoclc
       recs = node.css('recommendations')
       return nil if recs.empty?
 
-      return recs
+      return Recommendations.new(recs.first)
     end
 
     private :full, :pages

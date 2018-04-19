@@ -223,7 +223,7 @@ RSpec.describe Classifoclc do
     end
 
     it "has recommendations", :recommendations => true do
-      expect(@meridian.recommendations).to be_a Integer
+      expect(@meridian.recommendations).to be_a Classifoclc::Recommendations
     end
   end
 
@@ -282,6 +282,26 @@ RSpec.describe Classifoclc do
 
     it "has a language" do
       expect(@ed.language).to eq "eng"
+    end
+  end
+
+  describe Classifoclc::Recommendations, :recommendations => true do
+    before(:each) do
+      @meridian = Classifoclc::isbn("0151592659").first.recommendations
+    end
+
+    describe "#graphs" do
+      it "returns an hash of URLs" do
+        expect(@meridian.graphs).to be_a Hash
+        expect(@meridian.graphs[:all]).to eq "http://chart.apis.google.com/chart?cht=p&chd=e:9bCk&chs=350x200&chts=000000,16&chtt=All+Editions&chco=0D0399,124DBA&chdl=Classified|Unclassified"
+      end
+    end
+
+    describe "#fast" do
+      it "returns an array of hashes" do
+        expect(@meridian.fast).to be_a Array
+        expect(@meridian.fast.first[:heading]).to eq "Southern States"
+      end
     end
   end
 end
