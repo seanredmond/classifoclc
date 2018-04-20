@@ -283,6 +283,17 @@ RSpec.describe Classifoclc do
     it "has a language" do
       expect(@ed.language).to eq "eng"
     end
+
+    describe "#classifications" do
+      it "it returns an Array" do
+        expect(@ed.classifications).to be_a Array
+      end
+
+      it "is an Array of Hashes" do
+        expect(@ed.classifications.first).to be_a Hash
+        expect(@ed.classifications.first[:sfa]).to eq "813.54"
+      end
+    end
   end
 
   describe Classifoclc::Recommendations, :recommendations => true do

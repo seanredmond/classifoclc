@@ -1,7 +1,10 @@
 module Classifoclc
   class Edition
+    attr_reader :classifications
+
     def initialize(node)
       @edition = node
+      @classifications = load_classifications(node)
     end
 
     def oclc
@@ -35,6 +38,14 @@ module Classifoclc
     def language
       @edition['language']
     end
+
+    def load_classifications(node)
+      cls = node.css("classifications class")
+      return nil if cls.empty?
+      cls.map{|c| Hash[c.keys.map{|k| [k.to_sym, c[k]]}]}
+    end
+
+    private :load_classifications
   end
 end
     
