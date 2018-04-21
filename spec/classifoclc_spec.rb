@@ -314,5 +314,21 @@ RSpec.describe Classifoclc do
         expect(@meridian.fast.first[:heading]).to eq "Southern States"
       end
     end
+
+    describe "#ddc" do
+      it "returns Dewey Decimal classifications" do
+        expect(@meridian.ddc).to be_a Hash
+        expect(@meridian.ddc[:mostPopular]).to be_a Array
+        expect(@meridian.ddc[:mostPopular].first[:nsfa]).to eq "813.54"
+      end
+    end
+
+    describe "#lcc" do
+      it "returns Library of Congress classifications" do
+        expect(@meridian.lcc).to be_a Hash
+        expect(@meridian.lcc[:mostPopular]).to be_a Array
+        expect(@meridian.lcc[:mostPopular].first[:nsfa]).to eq "PS3573.A425"
+      end
+    end
   end
 end
