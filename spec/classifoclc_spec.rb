@@ -86,7 +86,12 @@ RSpec.describe Classifoclc do
     it "calls #lookup with an ISBN" do
       expect(Classifoclc).
         to receive(:lookup).
-             with({:identifier=>"isbn", :value=>"0151592659", :summary=>true})
+             with({:identifier => Classifoclc::Id::ISBN,
+                   :value => "0151592659",
+                   :orderby => Classifoclc::OrderBy::HOLDINGS,
+                   :order => Classifoclc::Order::DESC,
+                   :maxRecs => 25,
+                   :summary => true})
       Classifoclc::isbn("0151592659")
     end
   end
@@ -95,7 +100,12 @@ RSpec.describe Classifoclc do
     it "calls #lookup with an OWI", :owi => true do
       expect(Classifoclc).
         to receive(:lookup).
-             with({:identifier => "owi", :value => "201096", :summary => false})
+             with({:identifier => Classifoclc::Id::OWI,
+                   :value => "201096",
+                   :orderby => Classifoclc::OrderBy::HOLDINGS,
+                   :order => Classifoclc::Order::DESC,
+                   :maxRecs => 25,
+                   :summary => false})
       Classifoclc::owi("201096")
     end
   end

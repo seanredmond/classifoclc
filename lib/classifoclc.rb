@@ -20,12 +20,12 @@ module Classifoclc
     @@maxRecs = m
   end
   
-  def self.isbn(isbn)
-    lookup(:identifier => 'isbn', :value => isbn, :summary => true)
+  def self.isbn(isbn, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::ISBN, :value  => isbn}))
   end
 
-  def self.owi(owi)
-    lookup(:identifier => 'owi', :value  => owi, :summary => false)
+  def self.owi(owi, hsh = {})
+    lookup(default_options(hsh, {:identifier => Id::OWI, :value  => owi, :summary => false}))
   end
 
   def self.oclc(oclc, hsh = {})
@@ -64,7 +64,7 @@ module Classifoclc
     end
 
     if resp_code == "4"
-      if hsh[:identifier] == 'owi'
+      if hsh[:identifier] == :owi
         if parsed.css('work').map{|w| w['owi']}.include?(hsh[:value])
           raise Classifoclc::InfiniteLoopError.new("The record for owi %s contains records also with the owi %s. Cannot fetch data as it would lead to an infinite loop" % [hsh[:value], hsh[:value]])
         end
