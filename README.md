@@ -87,7 +87,7 @@ values:
 
 |Contant|Meaning|
 |-------|-------|
-|`Classifoclc::OrderBy::EDITIONS`|Number if editions the work has (default)|
+|`Classifoclc::OrderBy::EDITIONS`|Number of editions the work has (default)|
 |`Classifoclc::OrderBy::HOLDINGS`|Number of libraries that hold the work|
 |`Classifoclc::OrderBy::FIRSTYEAR`|Date of first edition|
 |`Classifoclc::OrderBy::LASTYEAR`|Date of latest edition|
@@ -116,6 +116,8 @@ LCC and Dewey Decimal recommendations are each hashes with the possible keys `:m
 
     > recs.lcc[:mostPopular].first
      => {:holdings=>"3221", :nsfa=>"PS3573.A425", :sfa=>"PS3573.A425"}
+    recs.ddc[:mostPopular].first
+     => {:holdings=>"2632", :nsfa=>"813.54", :sfa=>"813.54"}
      
 For the meaning of the classifications, refer to the [OCLC documentation](https://www.oclc.org/developer/develop/web-services/classify/classification.en.html).
 
