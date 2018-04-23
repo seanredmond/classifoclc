@@ -9,9 +9,23 @@ require "nokogiri"
 require "open-uri"
 require "uri"
 
+# Interface to OCLC's Classify service, "a FRBR-based prototype designed to
+# support the assignment of classification numbers and subject headings for
+# books, DVDs, CDs, and other types of materials."
+#
+# @see https://www.oclc.org/developer/develop/web-services/classify.en.html
+#   OCLC Documentation
 module Classifoclc
+  # Number of records returned per request
   @@maxRecs = 25
 
+  # @overload maxRecs
+  #   Get the max records per request
+  #   @return [Numeric] 
+  # @overload maxRecs=(value)
+  #   Set the max records
+  #   @param value [Numeric] the new value
+  #   @return [Numeric] the new value
   def self.maxRecs
     @@maxRecs
   end
@@ -19,19 +33,35 @@ module Classifoclc
   def self.maxRecs= m
     @@maxRecs = m
   end
-  
+
+  # Find works by ISBN number
+  # @param [String] isbn ISBN number to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.isbn(isbn, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::ISBN, :value  => isbn}))
   end
 
+  # Find works by OCLC work ID
+  # @param [String] owi work ID to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.owi(owi, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::OWI, :value  => owi, :summary => false}))
   end
 
+  # Find works by OCLC number
+  # @param [String] oclc OCLC number to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.oclc(oclc, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::OCLC, :value  => oclc}))
   end
 
+  # Find works by Library of Congress Control Number
+  # @param [String] lccn LCCN to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.lccn(lccn, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::LCCN, :value  => lccn}))
   end
