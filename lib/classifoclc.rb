@@ -74,6 +74,10 @@ module Classifoclc
     lookup(default_options(hsh, {:identifier => Id::TITLE, :value  => title}))
   end
 
+  def self.authorAndTitle(author, title, hsh = {})
+    lookup(default_options(hsh, {:identifier => [Id::AUTHOR, Id::TITLE], :value => [author, title]}))
+  end
+
   def self.fast(ident, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::IDENT, :value  => ident}))
   end
@@ -160,7 +164,14 @@ module Classifoclc
   private_class_method def self.param_string(hsh)
     id = hsh.delete(:identifier)
     val = hsh.delete(:value)
-    return api_params(default_options({id => val}, hsh))
+
+    if id.is_a? Array
+      params = default_options(Hash[id.zip(val)], hsh)
+    else
+      params = default_options({id => val}, hsh)
+    end
+    
+    return api_params(params)
              .map{|k,v| "#{k}=#{URI.encode_www_form_component(v)}"}.join("&") 
   end
 
