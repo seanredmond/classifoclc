@@ -1,0 +1,36 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1515
+Date: Mon, 07 May 2018 14:09:53 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="2"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Walker, Alice, 1944-" editions="1" eholdings="0" format="Computer file" holdings="1" itemtype="itemtype-compfile" owi="4033902340" title="Meridian">495471270</work>
+  <authors>
+    <author lc="n79109131" viaf="108495772">Walker, Alice, 1944-</author>
+  </authors>
+  <orderBy>thold desc</orderBy>
+  <input type="owi">4033902340</input>
+  <start>0</start>
+  <maxRecs>25</maxRecs>
+  <editions>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Computer file" holdings="1" itemtype="itemtype-compfile" language="eng" oclc="495471270" title="Meridian">
+      <classifications>
+        <class edition="21" ind1="0" ind2="4" sf2="21" sfa="813.54" tag="082"/>
+      </classifications>
+    </edition>
+  </editions>
+  <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:..&amp;chco=0D0399&amp;chs=350x200&amp;chts=000000,16&amp;chdl=Classified&amp;chtt=All+Editions</graph>
+    <ddc>
+      <mostPopular holdings="1" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="1" sfa="813.54"/>
+      <latestEdition holdings="1" sf2="21" sfa="813.54"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chd=e:..&amp;chdl=813.54&amp;chco=0D0399&amp;chs=350x200&amp;chts=000000,16</graph>
+    </ddc>
+  </recommendations>
+</classify>

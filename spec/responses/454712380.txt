@@ -1,0 +1,66 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 4317
+Date: Mon, 07 May 2018 14:06:55 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="2"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Walker, Alice, 1944-" editions="5" eholdings="0" format="Audiobook on Cassette" holdings="35" itemtype="itemtype-audiobook-cassette" owi="454712380" title="A Celebration of black women in literature : Alice Walker's Meridian.">18641354</work>
+  <authors>
+    <author lc="n79109131" viaf="108495772">Walker, Alice, 1944-</author>
+  </authors>
+  <orderBy>thold desc</orderBy>
+  <input type="owi">454712380</input>
+  <start>0</start>
+  <maxRecs>25</maxRecs>
+  <editions>
+    <edition eholdings="0" format="Audiobook on Cassette" holdings="20" itemtype="itemtype-audiobook-cassette" language="eng" oclc="7533499" title="A Celebration of black women in literature : Alice Walker's Meridian.">
+      <classifications>
+        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813" tag="082"/>
+        <class ind1="1" ind2="4" sfa="PS3573.A425" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Audiobook on Cassette" holdings="10" itemtype="itemtype-audiobook-cassette" language="eng" oclc="18641354" title="A celebration of Black women in literature : Alice Walker.">
+      <classifications>
+        <class ind1="0" ind2="0" sfa="RYA7190" tag="050"/>
+      </classifications>
+    </edition>
+    <edition eholdings="0" format="Audiobook on Cassette" holdings="3" itemtype="itemtype-audiobook-cassette" language="eng" oclc="21810116" title="A celebration of black women in literature, Alice Walker">
+      <classifications>
+        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="810.92" tag="082"/>
+      </classifications>
+    </edition>
+    <edition eholdings="0" format="Audiobook on Cassette" holdings="1" itemtype="itemtype-audiobook-cassette" language="eng" oclc="82842662" title="A celebration of black women in literature, Alice Walker"/>
+    <edition eholdings="0" format="Audiobook on Cassette" holdings="1" itemtype="itemtype-audiobook-cassette" language="eng" oclc="83792696" title="A celebration of black women in literature, Alice Walker"/>
+  </editions>
+  <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:8JD2&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chs=475x175&amp;chd=e:WyN0JsHCHCCMAvAv&amp;chco=0D0399,124DBA,278BD8,38C9E2,4DEADD,6DF9A8,4DCC82,32AD71&amp;chdl=Walker%2C+Alice%2C+1944-|African+American+women+authors|Meridian+%28Walker%2C+Alice%29|Women+in+literature|African+American+women+in+literature|Characters+and+characteristics|Radio+programs|United+States</graph>
+      <headings>
+        <heading heldby="33" ident="43003" src="fast">Walker, Alice, 1944-</heading>
+        <heading heldby="20" ident="799477" src="fast">African American women authors</heading>
+        <heading heldby="14" ident="1367487" src="fast">Meridian (Walker, Alice)</heading>
+        <heading heldby="10" ident="1177912" src="fast">Women in literature</heading>
+        <heading heldby="10" ident="799498" src="fast">African American women in literature</heading>
+        <heading heldby="3" ident="852293" src="fast">Characters and characteristics</heading>
+        <heading heldby="1" ident="1087512" src="fast">Radio programs</heading>
+        <heading heldby="1" ident="1204155" src="fast">United States</heading>
+      </headings>
+    </fast>
+    <ddc>
+      <mostPopular holdings="20" nsfa="813" sfa="813"/>
+      <mostRecent holdings="3" sfa="810.92"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chs=350x200&amp;chd=e:keFxVw&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8&amp;chdl=813|810.92|Unclassified</graph>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="20" nsfa="PS3573.A425" sfa="PS3573.A425"/>
+      <mostRecent holdings="10" sfa="RYA7190"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chs=350x200&amp;chd=e:keSkI9&amp;chts=000000,16&amp;chco=0D0399,124DBA,278BD8&amp;chdl=PS3573.A425|RYA7190|Unclassified</graph>
+    </lcc>
+  </recommendations>
+</classify>

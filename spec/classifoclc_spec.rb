@@ -164,6 +164,15 @@ RSpec.describe Classifoclc do
     end
   end
 
+  describe "#authorAndTitle", :author => true do
+    it "returns an Enumerator of works" do
+      works = Classifoclc::authorAndTitle("Walker, Alice", "Meridian")
+      expect(works.to_a.count).to eq 5
+      expect(works.to_a.first.owi).to eq "201096"
+      expect(works.to_a.last.owi).to eq "4033902340"
+    end
+  end
+
   describe Classifoclc::Work do
     before(:each) do
       @meridian = Classifoclc::isbn("0151592659").first

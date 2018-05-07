@@ -1,0 +1,73 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 4654
+Date: Mon, 07 May 2018 14:02:35 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="2"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <work author="Walker, Alice, 1944-" editions="6" eholdings="0" format="Book" holdings="133" itemtype="itemtype-book" owi="28397104" title="The third life of Grange Copeland ; Meridian ; The color purple">25194581</work>
+  <authors>
+    <author lc="n79109131" viaf="108495772">Walker, Alice, 1944-</author>
+  </authors>
+  <orderBy>thold desc</orderBy>
+  <input type="owi">28397104</input>
+  <start>0</start>
+  <maxRecs>25</maxRecs>
+  <editions>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="70" itemtype="itemtype-book" language="eng" oclc="54466773" title="The third life of Grange Copeland ; Meridian ; The color purple">
+      <classifications>
+        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="57" itemtype="itemtype-book" language="eng" oclc="25194581" title="The third life of Grange Copeland ; Meridian ; The color purple">
+      <classifications>
+        <class ind1="1" ind2="4" sfa="PS3573.A425" tag="050"/>
+        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="850537654" title="The third life of Grange Copeland : Meridian : The color purple">
+      <classifications>
+        <class edition="0" ind1="0" ind2="4" sf2="00" sfa="813.54" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="2" itemtype="itemtype-book" language="eng" oclc="814371198" title="The third life of Grange Copeland ; Meridian ; The color purple">
+      <classifications>
+        <class ind1=" " ind2="4" sfa="PS3573.A425" tag="050"/>
+        <class edition="22" ind1="0" ind2="4" sf2="22" sfa="813.54" tag="082"/>
+      </classifications>
+    </edition>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="124070081" title="Contents: The third life of Grange Copeland ; Meridian ; The color purple"/>
+    <edition author="Walker, Alice, 1944-" eholdings="0" format="Book" holdings="1" itemtype="itemtype-book" language="eng" oclc="633893122" title="The third life of Grange Copeland. : Meridian u.a. Alice Walker."/>
+  </editions>
+  <recommendations>
+    <graph>http://chart.apis.google.com/chart?cht=p&amp;chd=e:-tBS&amp;chs=350x200&amp;chts=000000,16&amp;chtt=All+Editions&amp;chco=0D0399,124DBA&amp;chdl=Classified|Unclassified</graph>
+    <fast>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chs=475x175&amp;chd=e:LgLgLgGaGaGaFOFG&amp;chco=0D0399,124DBA,278BD8,38C9E2,4DEADD,6DF9A8,4DCC82,32AD71&amp;chdl=Sisters|African+American+men|African+American+women|Uxoricide|Civil+rights+movements|Grandparent+and+child|Southern+States|African+American+families</graph>
+      <headings>
+        <heading heldby="129" ident="1119758" src="fast">Sisters</heading>
+        <heading heldby="129" ident="799236" src="fast">African American men</heading>
+        <heading heldby="129" ident="799438" src="fast">African American women</heading>
+        <heading heldby="72" ident="1163389" src="fast">Uxoricide</heading>
+        <heading heldby="72" ident="862708" src="fast">Civil rights movements</heading>
+        <heading heldby="72" ident="946360" src="fast">Grandparent and child</heading>
+        <heading heldby="59" ident="1244550" src="fast">Southern States</heading>
+        <heading heldby="57" ident="799152" src="fast">African American families</heading>
+      </headings>
+    </fast>
+    <ddc>
+      <mostPopular holdings="61" nsfa="813.54" sfa="813.54"/>
+      <mostRecent holdings="61" sfa="813.54"/>
+      <latestEdition holdings="2" sf2="22" sfa="813.54"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=DDC&amp;chd=e:dcij&amp;chs=350x200&amp;chts=000000,16&amp;chco=0D0399,124DBA&amp;chdl=813.54|Unclassified</graph>
+    </ddc>
+    <lcc>
+      <mostPopular holdings="129" nsfa="PS3573.A425" sfa="PS3573.A425"/>
+      <mostRecent holdings="129" sfa="PS3573.A425"/>
+      <graph>http://chart.apis.google.com/chart?cht=p&amp;chtt=LCC&amp;chd=e:-EB7&amp;chs=350x200&amp;chts=000000,16&amp;chco=0D0399,124DBA&amp;chdl=PS3573.A425|Unclassified</graph>
+    </lcc>
+  </recommendations>
+</classify>

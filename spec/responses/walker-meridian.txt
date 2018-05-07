@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache
+Content-Type: text/xml;charset=UTF-8
+Content-Length: 1558
+Date: Mon, 07 May 2018 13:52:53 GMT
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<classify xmlns="http://classify.oclc.org">
+  <response code="4"/>
+  <!--Classify is a product of OCLC Online Computer Library Center: http://classify.oclc.org-->
+  <workCount>5</workCount>
+  <start>0</start>
+  <maxRecs>25</maxRecs>
+  <orderBy>thold desc</orderBy>
+  <input type="title/author">Meridian|Walker%2C+Alice</input>
+  <works>
+    <work author="Walker, Alice, 1944-" editions="114" format="Book" holdings="3460" hyr="2016" itemtype="itemtype-book" lyr="1976" owi="201096" schemes="DDC LCC" title="Meridian" wi="1002101215"/>
+    <work author="Walker, Alice, 1944-" editions="6" format="Book" holdings="133" hyr="2003" itemtype="itemtype-book" lyr="1990" owi="28397104" schemes="DDC LCC" title="The third life of Grange Copeland ; Meridian ; The color purple" wi="25194581"/>
+    <work author="Walker, Alice, 1944-" editions="5" format="Audiobook on Cassette" holdings="35" hyr="1981" itemtype="itemtype-audiobook-cassette" lyr="1980" owi="454712380" schemes="DDC LCC" title="A Celebration of black women in literature : Alice Walker's Meridian." wi="18641354"/>
+    <work author="Walker, Alice, 1944-" editions="4" format="Audiobook" holdings="5" hyr="2011" itemtype="itemtype-audiobook" lyr="1987" owi="413338" schemes="DDC LCC" title="Meridian" wi="1011707779"/>
+    <work author="Walker, Alice, 1944-" editions="1" format="Computer file" holdings="1" hyr="1982" itemtype="itemtype-compfile" lyr="1982" owi="4033902340" schemes="DDC" title="Meridian" wi="495471270"/>
+  </works>
+</classify>

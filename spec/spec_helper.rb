@@ -29,7 +29,11 @@ RESP_15394518 = File.new(File.join(RESP_DIR, 'owi15394518.txt')).read
 RESP_2208251 = File.new(File.join(RESP_DIR, 'owi2208251.txt')).read
 RESP_1358899616 = File.new(File.join(RESP_DIR, 'owi1358899616.txt')).read
 RESP_867255897 = File.new(File.join(RESP_DIR, 'owi867255897.txt')).read
-
+RESP_AUTH_TITLE = File.new(File.join(RESP_DIR, 'walker-meridian.txt')).read
+RESP_28397104 = File.new(File.join(RESP_DIR, '28397104.txt')).read
+RESP_454712380 = File.new(File.join(RESP_DIR, '454712380.txt')).read
+RESP_413338 = File.new(File.join(RESP_DIR, '413338.txt')).read
+RESP_4033902340 = File.new(File.join(RESP_DIR, '4033902340.txt')).read
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -187,6 +191,32 @@ RSpec.configure do |config|
       with(query: {"owi" => "867255897", "summary" => "false",
                    "orderBy" => "hold desc", "maxRecs" => "4"}).
       to_return(RESP_867255897)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"author" => "Walker, Alice", "title" => "Meridian",
+                   "summary" => "false", "orderBy" => "hold desc",
+                   "maxRecs" => "25"}).
+      to_return(RESP_AUTH_TITLE)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "28397104", "summary" => "false",
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
+      to_return(RESP_28397104)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "454712380", "summary" => "false",
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
+      to_return(RESP_454712380)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "413338", "summary" => "false",
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
+      to_return(RESP_413338)
+
+    stub_request(:get, "classify.oclc.org/classify2/Classify").
+      with(query: {"owi" => "4033902340", "summary" => "false",
+                   "orderBy" => "hold desc", "maxRecs" => "25"}).
+      to_return(RESP_4033902340)
   end
 end
 

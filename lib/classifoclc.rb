@@ -75,7 +75,7 @@ module Classifoclc
   end
 
   def self.authorAndTitle(author, title, hsh = {})
-    lookup(default_options(hsh, {:identifier => [Id::AUTHOR, Id::TITLE], :value => [author, title]}))
+    lookup(default_options(hsh, {:identifier => [Id::AUTHOR, Id::TITLE], :value => [author, title], :summary => false}))
   end
 
   def self.fast(ident, hsh = {})
