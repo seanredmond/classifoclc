@@ -1,4 +1,3 @@
-require "pp"
 RSpec.describe Classifoclc do
   
   it "has a version number" do
