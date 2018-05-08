@@ -1,6 +1,21 @@
 module Classifoclc
   class Recommendations
-    attr_accessor :graphs, :fast, :ddc, :lcc
+    # A hash of links to Google Charts graphs showing the proportion
+    # of libraries using which identifiers
+    # @return [Hash]
+    attr_accessor :graphs
+
+    # Recommended FAST subject headings
+    # @return [Hash]
+    attr_accessor :fast
+
+    # Recommended Dewey Decimal classifications
+    # @return [Hash]
+    attr_accessor :ddc
+
+    # Recommended Library of Congress classifications
+    # @return [Hash]
+    attr_accessor :lcc
     
     def initialize(node)
       @graphs = load_graphs(node)

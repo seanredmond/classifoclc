@@ -1,4 +1,6 @@
 module Classifoclc
+  # An abstract work. A work is not a physical book, but the
+  # conceptual work of which all the physical books are manifestions
   class Work
     attr_reader :authors
     def initialize(node)
@@ -9,34 +11,50 @@ module Classifoclc
       @recommendations = load_recommendations(node)
     end
 
+    # Get the work ID
+    # @return [String]
     def owi
       @work['owi']
     end
 
+    # Get the title
+    # @return [String]
     def title
       @work['title']
     end
 
+    # Get the format
+    # @return [String]
     def format
       @work['format']
     end
 
+    # Get the type of item
+    # @return [String]
     def itemtype
       @work['itemtype']
     end
 
+    # Get the number of editions the work has
+    # @return [Integer]
     def edition_count
       @work['editions'].to_i
     end
 
+    # Get the number of libraries that hold a copy of this work
+    # @return [Integer]
     def holdings
       @work['holdings'].to_i
     end
 
+    # Get the number of libraries that hold a digital copy of this work
+    # @return [Integer]
     def eholdings
       @work['eholdings'].to_i
     end
 
+    # Get the editions of this work
+    # @return [Enumerator<Classifoclc::Edition>]
     def editions
       Enumerator.new do |e|
         pages.each do |pg|
@@ -47,6 +65,8 @@ module Classifoclc
       end
     end
 
+    # Get the recommended classifications for this work
+    # @return [Array<Classifoclc::Recommendations>]
     def recommendations
       @recommendations
     end
@@ -93,6 +113,6 @@ module Classifoclc
       return Recommendations.new(recs.first)
     end
 
-    private :full, :pages
+    private :full, :pages, :load_recommendations
   end
 end

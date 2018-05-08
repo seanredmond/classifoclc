@@ -43,7 +43,7 @@ module Classifoclc
   end
 
   # Find works by OCLC work ID
-  # @param [String] owi work ID to search for
+  # @param [String] owi Work ID to search for
   # @param [Hash] hsh more options
   # @return [Enumerator<Classifoclc::Work>]
   def self.owi(owi, hsh = {})
@@ -66,18 +66,36 @@ module Classifoclc
     lookup(default_options(hsh, {:identifier => Id::LCCN, :value  => lccn}))
   end
 
+  # Find works by author
+  # @param [String] author Author to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.author(auth, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::AUTHOR, :value  => auth}))
   end
 
+  # Find works by title
+  # @param [String] title Titleto search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.title(title, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::TITLE, :value  => title}))
   end
 
+  # Find works by author and title
+  # @param [String] author Author to search for
+  # @param [String] title Title to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.authorAndTitle(author, title, hsh = {})
     lookup(default_options(hsh, {:identifier => [Id::AUTHOR, Id::TITLE], :value => [author, title], :summary => false}))
   end
 
+  # Find works by FAST subject heading
+  # @param [String] fast FAST subject ID to search for
+  # @param [String] title Title to search for
+  # @param [Hash] hsh more options
+  # @return [Enumerator<Classifoclc::Work>]
   def self.fast(ident, hsh = {})
     lookup(default_options(hsh, {:identifier => Id::IDENT, :value  => ident}))
   end
