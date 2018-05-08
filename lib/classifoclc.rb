@@ -194,7 +194,7 @@ module Classifoclc
   end
 
   def self.fetch_data(hsh)
-    resp = open(URL % param_string(hsh.clone)).read
+    resp = open(URL % param_string(hsh.clone), "User-Agent" => "Classifoclc/#{Classifoclc::VERSION}",).read
     parsed = Nokogiri::XML(resp)
     return parsed
   end
