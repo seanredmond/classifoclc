@@ -36,7 +36,7 @@ The easiest way to use `Classifoclc` is to lookup works by several standard iden
 Each of these returns an `Enumerator` that can be looped over to get the
 individual `Classifoclc::Work` objects. A "work" is an abstraction, and each
 work has one or more editions. An "edition" is a physical (or digital) item that
-can be held by a library. Fromt the `Classifoclc::Work` object you can get
+can be held by a library. From the `Classifoclc::Work` object you can get
 several pieces of information, most usefully, perhaps, the number of editions
 (`#edition_count`), the number of libraries that hold the work (`#holdings`) and
 and that hold the work digitally (`#eholdings`), and the editions themselves (`#editions`)
@@ -62,7 +62,7 @@ and that hold the work digitally (`#eholdings`), and the editions themselves (`#
     > wrk.recommendations # Returns a Recommendations object
     
 
-A work has an array authors which seems to inlcude all the authors of all the
+A work has an array authors which seems to include all the authors of all the
 editions of a work, including their VIAF and LC identifiers:
 
     > work = Classifoclc::isbn("0151592659").first
@@ -78,6 +78,16 @@ You can also lookup by author(`Classifoclc::author`), title
 (`Classifoclc::title`) and FAST identifier (`Classifoclc::fast`) but these can
 return a _very large_ number of results that take a long time and thousands of
 requests to return.
+
+Finally, you can search by author and title:
+
+    > works = Classifoclc::authorAndTitle("Walker, Alice", "Meridian")
+	> works.count
+	 => 5
+	> works.first.owi
+     => "201096"
+    > works.first.edition_count
+     => 114	 
 
 ### Sort order
 
@@ -100,27 +110,6 @@ values:
 
     > works = Classifoclc::isbn("0151592659", :orderby => Classifoclc::OrderBy::HOLDINGS, :order => Classifoclc::Order::DESC)
     
-### Recommendations
-
-Each `Work` has a set of recommended classifications available through the `#recommendations` method. This returns a `Recommendations` object
-
-    > work = Classifoclc::isbn("0151592659").first
-    > recs = work.recommendations
-    
-The recommendations include an array of FAST subject headings
-
-    > recs.fast.first
-     => {:heading=>"Southern States", :holdings=>"2945", :ident=>"1244550"}
-     
-LCC and Dewey Decimal recommendations are each hashes with the possible keys `:mostPopular`, `:mostRecent`, and `:latestEdition`. For each key the value is an array of recommended classifiers:
-
-    > recs.lcc[:mostPopular].first
-     => {:holdings=>"3221", :nsfa=>"PS3573.A425", :sfa=>"PS3573.A425"}
-    recs.ddc[:mostPopular].first
-     => {:holdings=>"2632", :nsfa=>"813.54", :sfa=>"813.54"}
-     
-For the meaning of the classifications, refer to the [OCLC documentation](https://www.oclc.org/developer/develop/web-services/classify/classification.en.html).
-
 ### Editions
 
 Use the `#editions` method to get editions of a work. The method returns an `Enumerator`
@@ -151,8 +140,29 @@ Use the `#editions` method to get editions of a work. The method returns an `Enu
     > ed.classifications
      => [{:edition=>"0", :ind1=>"0", :ind2=>"0", :sf2=>"00", :sfa=>"813.54", :tag=>"082"}, {:ind1=>"0", :ind2=>"0", :sfa=>"PS3573.A425", :tag=>"050"}, {:ind1=>"0", :ind2=>"0", :sfa=>"PZ4.W176", :tag=>"050"}]
      
-Note that `Edition#authors` just returns a string, _not_ return and Array of `Author` objects like `Work#authors`
+Note that `Edition#authors` just returns a string, _not_ an Array of `Author` objects like `Work#authors`
 
+For the meaning of the classifications, refer to the [OCLC documentation](https://www.oclc.org/developer/develop/web-services/classify/classification.en.html).
+
+### Recommendations
+
+Each `Work` has a set of recommended classifications available through the `#recommendations` method. This returns a `Recommendations` object
+
+    > work = Classifoclc::isbn("0151592659").first
+    > recs = work.recommendations
+    
+The recommendations include an array of FAST subject headings
+
+    > recs.fast.first
+     => {:heading=>"Southern States", :holdings=>"2945", :ident=>"1244550"}
+     
+LCC and Dewey Decimal recommendations are each hashes with the possible keys `:mostPopular`, `:mostRecent`, and `:latestEdition`. For each key the value is an array of recommended classifiers:
+
+    > recs.lcc[:mostPopular].first
+     => {:holdings=>"3221", :nsfa=>"PS3573.A425", :sfa=>"PS3573.A425"}
+    recs.ddc[:mostPopular].first
+     => {:holdings=>"2632", :nsfa=>"813.54", :sfa=>"813.54"}
+     
 For the meaning of the classifications, refer to the [OCLC documentation](https://www.oclc.org/developer/develop/web-services/classify/classification.en.html).
 
 ## Development
